@@ -28,7 +28,7 @@
     }
   },
   "lint-staged": {
-    "Linting": [
+    "*.js /routes/**/*.js": [
       "node node_modules/eslint/bin/eslint.js *.js routes/**/*.js",
       "prettier --write",
       "git add"
