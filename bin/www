@@ -6,7 +6,7 @@
 
 const app = require('../app');
 const debug = require('debug')('adapterapi:server');
-const http = require('http');
+const server = require('http').createServer(app);
 
 /**
  * Get port from environment and store in Express.
@@ -19,7 +19,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-const server = http.createServer(app);
+
 
 /**
  * Listen on provided port, on all network interfaces.
