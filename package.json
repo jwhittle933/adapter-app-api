@@ -11,6 +11,7 @@
     "pretty-fix": "prettier --list-different ./bin/www app.js ./routes/**/*.js"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
     "cookie-parser": "~1.4.3",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
@@ -22,6 +23,7 @@
     "lint-staged": "^8.1.5",
     "morgan": "~1.9.0",
     "mysql": "^2.16.0",
+    "nodemon": "^1.18.10",
     "prettier": "^1.16.4",
     "pug": "2.0.0-beta11"
   },
