@@ -1,0 +1,37 @@
+{
+  "name": "adapterapi",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "lint": "node node_modules/eslint/bin/eslint.js *.js routes/**/*.js",
+    "lint-fix": "eslint --fix .",
+    "pretty": "prettier --write ./app.js ./routes/**/*.js",
+    "pretty-fix": "prettier --list-different app.js ./routes/**/*.js"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "eslint": "^5.15.1",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5",
+    "morgan": "~1.9.0",
+    "prettier": "^1.16.4",
+    "pug": "2.0.0-beta11"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "Linting": [
+      "node node_modules/eslint/bin/eslint.js *.js routes/**/*.js",
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
