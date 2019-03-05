@@ -1,4 +1,5 @@
-# API Enpoints for Adapter-App by _Jonathan Whittle_
-## Created with express.js
-* For use with Adapter App by _Jeremy Osborn_
-* API endpoints available [here](https://adapter-api.herokuapp.com/api)
+# API Enpoints by _Jonathan Whittle_ 
+### For use with Adapter-App by _Jeremy Osborn_
+<hr>
+## Created with ExpressJS
+API endpoints available [here](https://adapter-api.herokuapp.com/api)
