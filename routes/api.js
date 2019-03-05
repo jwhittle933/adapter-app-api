@@ -4,7 +4,7 @@ const router = express.Router()
 const displayLogTime = require('./Utils/timeHelpers.js')
 const removeDuplicates = require('./Utils/removeDuplicates.js')
 const DeviceList = require('./Data/Devicelist.js')
-const RoomList = require('./Data/ClassroomList.js')
+const RoomList = require('./Data/Classroomlist.js')
 
 const info = `
 	<div style="margin-left: 3vw; margin-top: 5vh; max-width: 20vw">
