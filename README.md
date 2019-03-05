@@ -1,3 +1,3 @@
-# API Enpoints for Adapter-App by _Jeremy Osborn_
+# API Enpoints for Adapter-App by _Jonathan Whittle_
 ## Created with express.js
-Application by _Jonathan Whittle_
+* For use with Adapter App by _Jeremy Osborn_
