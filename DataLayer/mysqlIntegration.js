@@ -7,8 +7,6 @@ const conn = mysql.createConnection({
   database: process.env.DATABASE,
 })
 
-module.exports = conn
-
 conn.connect(err => {
   if (err) {
     console.error(`error connecting: ${err.stack}`)
@@ -17,4 +15,25 @@ conn.connect(err => {
   console.log(`Connected as: ${connection.threadId}`)
 })
 
+conn.query(
+  `
+	CREATE TABLE IF NOT EXISTS devices (
+		id INT NOT NULL PRIMARY KEY,
+		name VARCHAR NOT NULL, 
+		hasHDMI VARCHAR NOT NULL,
+		hasVGA VARCHAR NOT NULL,
+		adapterHDMI VARCHAR NOT NULL,
+		adapterVGA VARCHAR NOT NULL, 
+		linkHDMI VARCHAR NOT NULL, 
+		linkVGA VARCHAR NOT NULL
+	)
+`,
+  (err, rows, fields) => {
+    if (err) throw err
+    console.log(rows)
+  },
+)
+
 conn.end()
+
+module.exports = conn
