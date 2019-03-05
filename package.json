@@ -6,7 +6,7 @@
     "start": "node ./bin/www",
     "lint": "node node_modules/eslint/bin/eslint.js *.js routes/**/*.js",
     "lint-fix": "eslint --fix .",
-    "pretty": "prettier --write ./bin/www ./app.js ./routes/**/*.js",
+    "pretty": "prettier --write ./app.js ./routes/**/*.js",
     "pretty-fix": "prettier --list-different ./bin/www app.js ./routes/**/*.js"
   },
   "dependencies": {
@@ -28,9 +28,9 @@
     }
   },
   "lint-staged": {
-    "./**/*.js /routes/**/*.js": [
-      "node node_modules/eslint/bin/eslint.js ./app.js routes/**/*.js",
-      "prettier --write",
+    "app.js /routes/**/*.js": [
+      "node node_modules/eslint/bin/eslint.js *.js routes/**/*.js",
+      "prettier --write ./bin/www app.js ./routes/**/*.js",
       "git add"
     ]
   }

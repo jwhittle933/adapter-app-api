@@ -15,7 +15,6 @@ const server = require('http').createServer(app)
 const port = normalizePort(process.env.PORT || '4000')
 app.set('port', port)
 
-
 /**
  * Listen on provided port, on all network interfaces.
  */
