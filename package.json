@@ -9,7 +9,8 @@
     "lint-fix": "eslint --fix .",
     "pretty": "prettier --write ./app.js ./routes/**/*.js",
     "pretty-fix": "prettier --list-different ./bin/www app.js ./routes/**/*.js",
-    "setup-db": "node ./DataLayer/createTable.js"
+    "setup-db": "node ./DataLayer/createTable.js",
+    "migrate": "node ./DataLayer/migration.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",

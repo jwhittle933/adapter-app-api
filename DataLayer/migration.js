@@ -10,7 +10,8 @@ conn.connect(err => {
 
 // Migrate room data
 rooms.map(room => {
-  conn.query(`
+  conn.query(
+    `
 		INSERT INTO classrooms (
 			building, 
 			roomNumber, 
@@ -23,12 +24,21 @@ rooms.map(room => {
 			'${room.hasHDMI}', 
 			'${room.hasVGA}'
 		);
-	`)
+	`,
+    (err, results) => {
+      if (err) {
+        console.error(err)
+        throw err
+      }
+      console.info(`Succesfully entered ${results.length} rows.`)
+    },
+  )
 })
 
 // Migrate device data
 devices.map(device => {
-  conn.query(`
+  conn.query(
+    `
 		INSERT INTO devices (
 			id, 
 			name, 
@@ -49,7 +59,15 @@ devices.map(device => {
 			'${device.linkHDMI}', 
 			'${device.linkVGA}'
 		);
-	`)
+	`,
+    (err, results) => {
+      if (err) {
+        console.error(err)
+        throw err
+      }
+      console.info(`Succesfully entered ${results.length} rows.`)
+    },
+  )
 })
 
 conn.end()

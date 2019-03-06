@@ -24,7 +24,7 @@ conn.query(
 `,
   (err, rows, fields) => {
     if (err) throw err
-    console.log(rows)
+    console.info(`${rows} affected. ${fields} added.`)
   },
 )
 
@@ -41,7 +41,7 @@ conn.query(
 `,
   (err, rows, fields) => {
     if (err) throw err
-    console.log(rows)
+    console.info(`${rows} affected. ${fields} added.`)
   },
 )
 
