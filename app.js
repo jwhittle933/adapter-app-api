@@ -20,24 +20,23 @@ app.set('view engine', 'pug')
 // Cors and Security Middleware
 app.use(cors(corsOpts))
 app.use(helmet())
-app.use((req, res, next) => {
-  const clientAuth = req.get('Client-Token')
-  const serverAuth = process.env.SECRET
-  clientAuth !== serverAuth
-    ? res.status(401).send({ code: 401, message: 'Unauthorized' })
-    : next()
-})
+// app.use((req, res, next) => {
+//   const clientAuth = req.get('Client-Token')
+//   const serverAuth = process.env.SECRET
+//   // clientAuth !== serverAuth
+//   //   ? res.status(401).send({ code: 401, message: 'Unauthorized' })
+//   //   : next()
+// })
 
 app.get('/', (req, res) => {
   res.redirect('/api')
 })
 
 app.get('/healthcheck', (req, res) => {
-  res.send(`
-	<div style="margin-top: 5em">
-		<h1 style="text-align: center">Hello from the A-P-I <br> – Adele, "Hello")</h1>
-	</div>
-	`)
+  res.render('healthcheck', {
+    text: `Hello from the A-P-I`,
+    attr: `(– Adele, "Hello")`,
+  })
 })
 
 app.use(logger('dev'))

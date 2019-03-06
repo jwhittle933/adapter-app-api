@@ -6,28 +6,13 @@ const removeDuplicates = require('./Utils/removeDuplicates.js')
 const DeviceList = require('./Data/Devicelist.js')
 const RoomList = require('./Data/Classroomlist.js')
 
-const info = `
-	<div style="margin-left: 3vw; margin-top: 5vh; max-width: 20vw">
-		<h1>Adapter App API<h1>
-		<h2>Available Routes<h2>
-		<hr>
-		<p>/</p>
-		<p>/buildings</p>
-		<p>/buildings/:building</p>
-		<p>/buildings/:building/rooms</p>
-		<p>/buildings/:building/:room</p>
-		<p>/devices</p>
-		<p>/devices/:device</p>
-	</div>
-`
-
 router.use((req, res, next) => {
   console.log(displayLogTime(req))
   next()
 })
 
 router.get('/', (req, res) => {
-  res.send(info)
+  res.render('info')
 })
 
 // Fetches an array of building names
