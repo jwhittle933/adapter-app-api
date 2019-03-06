@@ -9,12 +9,11 @@
     "lint-fix": "eslint --fix .",
     "pretty": "prettier --write ./app.js ./routes/**/*.js",
     "pretty-fix": "prettier --list-different ./bin/www app.js ./routes/**/*.js",
-    "setup-db": "node ./DataLayer/createTable.js",
-    "migrate": "node ./DataLayer/migration.js"
+    "initdb": "node ./DataLayer/createTable.js",
+    "migrate": "node ./DataLayer/migration.js",
+    "testdb": "node ./DataLayer/testQuery.js"
   },
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "cookie-parser": "~1.4.3",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "dotenv": "^6.2.0",
