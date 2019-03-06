@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
+const helmet = require('helmet')
 const cors = require('cors')
 const apiRouter = require('./routes/api')
 
@@ -16,6 +17,7 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 
 app.use(cors(corsOpts))
+app.use(helmet())
 
 app.get('/', (req, res) => {
   res.redirect('/api')
