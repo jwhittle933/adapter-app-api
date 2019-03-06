@@ -1,12 +1,11 @@
 const express = require('express')
 const path = require('path')
-const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const helmet = require('helmet')
 const cors = require('cors')
 const apiRouter = require('./routes/api')
-
 const app = express()
+
 const corsOpts = {
   origin: 'http://localhost:3000',
   optionsSuccessStatus: 200,
@@ -16,6 +15,7 @@ const corsOpts = {
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 
+// Cors and Security Middleware
 app.use(cors(corsOpts))
 app.use(helmet())
 
@@ -33,7 +33,6 @@ app.get('/healthcheck', (req, res) => {
 
 app.use(logger('dev'))
 app.use(express.json())
-app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/api', apiRouter)
