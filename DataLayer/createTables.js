@@ -12,7 +12,7 @@ conn.connect(err => {
 conn.query(
   `
 	CREATE TABLE IF NOT EXISTS devices (
-		id int(11) NOT NULL PRIMARY KEY,
+		id varchar(200) NOT NULL PRIMARY KEY,
 		name varchar(200) NOT NULL, 
 		hasHDMI varchar(200) NOT NULL,
 		hasVGA varchar(200) NOT NULL,
@@ -32,7 +32,7 @@ conn.query(
 conn.query(
   `
 	CREATE TABLE IF NOT EXISTS classrooms (
-		id int(11) NOT NULL PRIMARY KEY,
+		id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
 		building varchar(200) NOT NULL,
 		roomNumber varchar(20) NOT NULL, 
 		hasHDMI varchar(200) NOT NULL,
