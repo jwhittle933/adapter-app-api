@@ -1,11 +1,4 @@
-require('dotenv').config()
-const mysql = require('mysql')
-const conn = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DATABASE,
-})
+const conn = require('./connection')
 
 conn.connect(err => {
   if (err) {
@@ -15,18 +8,36 @@ conn.connect(err => {
   console.log(`Connected as: ${conn.threadId}`)
 })
 
+// Create devices table
 conn.query(
   `
-	CREATE TABLE IF NOT EXISTS 'devices' (
-		'id' int(11) NOT NULL PRIMARY KEY,
-		'name' varchar(200) NOT NULL, 
-		'hasHDMI' varchar(200) NOT NULL,
-		'hasVGA' varchar(200) NOT NULL,
-		'adapterHDMI' varchar(200) NOT NULL,
-		'adapterVGA' varchar(200) NOT NULL, 
-		'linkHDMI' varchar(200) NOT NULL, 
-		'linkVGA' varchar(200) NOT NULL
-	)
+	CREATE TABLE IF NOT EXISTS devices (
+		id int(11) NOT NULL PRIMARY KEY,
+		name varchar(200) NOT NULL, 
+		hasHDMI varchar(200) NOT NULL,
+		hasVGA varchar(200) NOT NULL,
+		adapterHDMI varchar(200) NOT NULL,
+		adapterVGA varchar(200) NOT NULL, 
+		linkHDMI varchar(200) NOT NULL, 
+		linkVGA varchar(200) NOT NULL
+	);
+`,
+  (err, rows, fields) => {
+    if (err) throw err
+    console.log(rows)
+  },
+)
+
+// Create classroom table
+conn.query(
+  `
+	CREATE TABLE IF NOT EXISTS classrooms (
+		id int(11) NOT NULL PRIMARY KEY,
+		building varchar(200) NOT NULL,
+		roomNumber varchar(20) NOT NULL, 
+		hasHDMI varchar(200) NOT NULL,
+		hasVGA varchar(200) NOT NULL
+	);
 `,
   (err, rows, fields) => {
     if (err) throw err
@@ -35,5 +46,3 @@ conn.query(
 )
 
 conn.end()
-
-module.exports = conn
