@@ -3,11 +3,9 @@ const rooms = require('../routes/Data/Classroomlist.js')
 const devices = require('../routes/Data/Devicelist.js')
 
 conn.connect(err => {
-  if (err) {
-    console.error(`error connecting: ${err.stack}`)
-    return
-  }
-  console.log(`Connected as: ${conn.threadId}`)
+  err
+    ? console.error(`error connecting: ${err.stack}`)
+    : console.log(`Connected as: ${conn.threadId}`)
 })
 
 // Migrate room data
