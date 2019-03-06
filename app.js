@@ -3,6 +3,8 @@ const path = require('path')
 const logger = require('morgan')
 const helmet = require('helmet')
 const cors = require('cors')
+const uuid = require('uuid/v4')
+const session = require('express-session')
 const apiRouter = require('./routes/api')
 const app = express()
 
@@ -18,6 +20,13 @@ app.set('view engine', 'pug')
 // Cors and Security Middleware
 app.use(cors(corsOpts))
 app.use(helmet())
+app.use((req, res, next) => {
+  const clientAuth = req.get('Client-Token')
+  const serverAuth = process.env.SECRET
+  clientAuth !== serverAuth
+    ? res.status(401).send({ code: 401, message: 'Unauthorized' })
+    : next()
+})
 
 app.get('/', (req, res) => {
   res.redirect('/api')

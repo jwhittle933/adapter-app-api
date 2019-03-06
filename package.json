@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www",
+    "watch": "nodemon ./bin/www",
     "main": "./bin.www",
     "lint": "node node_modules/eslint/bin/eslint.js *.js routes/**/*.js",
     "lint-fix": "eslint --fix .",
