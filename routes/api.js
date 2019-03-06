@@ -11,13 +11,13 @@ const info = `
 		<h1>Adapter App API<h1>
 		<h2>Available Routes<h2>
 		<hr>
-		<p>/<p>
-		<p>/buildings<p>
-		<p>/buildings/:building<p>
+		<p>/</p>
+		<p>/buildings</p>
+		<p>/buildings/:building</p>
 		<p>/buildings/:building/rooms</p>
-		<p>/buildings/:building/:room<p>
-		<p>/devices<p>
-		<p>/devices/:device<p>
+		<p>/buildings/:building/:room</p>
+		<p>/devices</p>
+		<p>/devices/:device</p>
 	</div>
 `
 
