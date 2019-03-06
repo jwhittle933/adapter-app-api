@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="https://picsum.photos/200/300/?blur">
+  <img src="https://picsum.photos/500/400/?blur">
   <br>
   	API Endpoints
   <br>
@@ -8,12 +8,10 @@
 <h3 align="center">For use with Adapter-App by <i>Jeremy Osborn</i></h3>
 
 <p align="center">
-  <a href="jonathanwhittledev.com">Jonathan Whittle</a> •
-  <a href="#how-to-use">How To Use</a> •
-  <a href="#download">Download</a> •
-  <a href="#credits">Credits</a> •
-  <a href="#related">Related</a> •
-  <a href="#license">License</a>
+  <a href="http://jonathanwhittledev.com" target="_blank">Jonathan Whittle</a> •
+  <a href="#scripts">Scripts</a> •
+  <a href="https://github.com/jwhittle933/adapter-app-api/archive/master.zip">Download</a> •
+  <a href="https://github.com/jwosborn/Adapter-app">AdapterApp</a> •
 </p>
 
 
