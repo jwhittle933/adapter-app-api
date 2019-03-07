@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="https://picsum.photos/500/400/?blur">
+  <img src="https://picsum.photos/800/400/">
   <br>
   	API Endpoints
   <br>
@@ -17,6 +17,8 @@
   <a href="https://github.com/jwhittle933/adapter-app-api/archive/master.zip">Download</a> •
   <a href="https://github.com/jwosborn/Adapter-app">AdapterApp</a> •
 </p>
+
+<hr>
 
 ## Scripts
 ```bash
@@ -118,7 +120,7 @@ This path returns an Array of Objects with data for a single building, selected 
 ]
 ```
 
-### Room in a Building
+### Rooms in a Building
 `/buildings/:building/rooms`
 This path returns an Array of rooms for a specific building. 
 ```json
@@ -129,9 +131,64 @@ This path returns an Array of rooms for a specific building.
 ]
 ```
 
+### Room Info
 `/buildings/:building/:room`
+This path returns an Array with a single object containing the data for a single room. 
+```json
+[
+	{
+		"building": "carver",
+		"roomNumber": 108,
+		"hasHDMI": false,
+		"hasVGA": true
+	}
+]
+```
+
+### Devices
 `/devices`
+This path reuturns an Array of Objects with the devices and there relevant properties
+```json
+[
+	{
+		"_id": "macbook-air-2011-2014",
+		"name": "Macbook Air 2011-2014",
+		"hasHDMI": false,
+		"hasVGA": false,
+		"adapterHDMI": "Thunderbolt-HDMI",
+		"adapterVGA": "Thunderbolt-VGA",
+		"linkHDMI": "https://www.amazon.com/s?k=thunderbolt+to+HDMI+adapter&ref=nb_sb_noss_2",
+		"linkVGA": "https://www.amazon.com/s?k=thunderbolt+to+vga+adapter&ref=nb_sb_noss_2"
+	},
+	{
+		"_id": "macbook-pro-2011-2014",
+		"name": "Macbook/Macbook Pro 2011-2014",
+		"hasHDMI": true,
+		"hasVGA": false,
+		"adapterHDMI": "Thunderbolt-HDMI",
+		"adapterVGA": "Thunderbolt-VGA",
+		"linkHDMI": "https://www.amazon.com/s?k=thunderbolt+to+HDMI+adapter&ref=nb_sb_noss_2",
+		"linkVGA": "https://www.amazon.com/s?k=thunderbolt+to+vga+adapter&ref=nb_sb_noss_2"
+	},
+]
+```
+### Single Device
 `/devices/:device`
+This path sends back an Array with a single Object of device data
+```json
+[
+	{
+		"_id": "macbook-air-2011-2014",
+		"name": "Macbook Air 2011-2014",
+		"hasHDMI": false,
+		"hasVGA": false,
+		"adapterHDMI": "Thunderbolt-HDMI",
+		"adapterVGA": "Thunderbolt-VGA",
+		"linkHDMI": "https://www.amazon.com/s?k=thunderbolt+to+HDMI+adapter&ref=nb_sb_noss_2",
+		"linkVGA": "https://www.amazon.com/s?k=thunderbolt+to+vga+adapter&ref=nb_sb_noss_2"
+	}
+]
+```
 
 
 ## Production
