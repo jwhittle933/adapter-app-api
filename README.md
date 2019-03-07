@@ -13,6 +13,7 @@
   <a href="#customization">Customization</a> •
   <a href="#base-endpoints">Base Enpoints</a> •
   <a href="#scoped-endpoints">Scoped Enpoints</a> •
+  <a href="#environments">Environments</a> •
   <a href="#production">Production</a> •
   <a href="https://github.com/jwhittle933/adapter-app-api/archive/master.zip">Download</a> •
   <a href="https://github.com/jwosborn/Adapter-app">AdapterApp</a> •
@@ -190,6 +191,11 @@ This path sends back an Array with a single Object of device data
 ]
 ```
 
+## Environments
+<p align="center">
+	In order to use a database (in dev or in prod), a `.env` file must be present in your code base. In this file, you must set DB_HOST, DB_USER, DB_PASSWORD, and DATABASE variables. As well, a SECRET variable must be set in order authenticate any api reqests that come through.  
+	<strong>Please keep your `.env` files private by adding it to `.gitignore`.</strong>
+</p>
 
 ## Production
 
