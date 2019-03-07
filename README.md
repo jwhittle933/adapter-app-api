@@ -191,8 +191,8 @@ This path sends back an Array with a single Object of device data
 ## Customization
 
 ## Environments
-	In order to use a database (in dev or in prod), a `.env` file must be present in your code base. In this file, you must set DB_HOST, DB_USER, DB_PASSWORD, and DATABASE variables. As well, a SECRET variable must be set in order authenticate any api reqests that come through.  
-	_Please keep your `.env` files private by adding it to `.gitignore`._
+In order to use a database (in dev or in prod), a `.env` file must be present in your code base. In this file, you must set DB_HOST, DB_USER, DB_PASSWORD, and DATABASE variables. As well, a SECRET variable must be set in order authenticate any api reqests that come through.  
+_Please keep your `.env` files private by adding it to `.gitignore`._
 
 ## Production
 
