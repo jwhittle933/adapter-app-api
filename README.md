@@ -10,6 +10,10 @@
 <p align="center">
   <a href="http://jonathanwhittledev.com" target="_blank">Jonathan Whittle</a> •
   <a href="#scripts">Scripts</a> •
+  <a href="#customization">Customization</a> •
+  <a href="#base-endpoints">Base Enpoints</a> •
+  <a href="#scoped-endpoints">Scoped Enpoints</a> •
+  <a href="#production">Production</a> •
   <a href="https://github.com/jwhittle933/adapter-app-api/archive/master.zip">Download</a> •
   <a href="https://github.com/jwosborn/Adapter-app">AdapterApp</a> •
 </p>
@@ -61,6 +65,75 @@ $ yarn migrate
 $ yarn testdb 
 ```
 
+## Customization
 
+## Base Endpoints
+### Base
+`/`
+Redirects to `/api`, where you can fild all of this information again.
+
+### Healthcheck
+`/healthcheck`
+Returns a friendly message from Adele. Test route to ensure the api is responding. 
+
+##Scoped Routes
+The following routes are scoped to the `/api` base path, i.e., in order to hit `/buildings`, in your request, the uri must include the base, `/api/buildings`
+
+### All Buildings
+`/buildings`
+This path return an Array of building names.
+```json
+[
+	"norton",
+	"cooke",
+	"library",
+	"carver",
+	"rankin"
+]
+```
+
+### Individual Building 
+`/buildings/:building`
+This path returns an Array of Objects with data for a single building, selected from the list above. 
+```json
+[
+	{
+		"building": "carver",
+		"roomNumber": 108,
+		"hasHDMI": false,
+		"hasVGA": true
+	},
+	{
+		"building": "carver",
+		"roomNumber": 135,
+		"hasHDMI": false,
+		"hasVGA": true
+	},
+	{
+		"building": "carver",
+		"roomNumber": "Ingram",
+		"hasHDMI": false,
+		"hasVGA": true
+	}
+]
+```
+
+### Room in a Building
+`/buildings/:building/rooms`
+This path returns an Array of rooms for a specific building. 
+```json
+[
+	108,
+	135,
+	"Ingram"
+]
+```
+
+`/buildings/:building/:room`
+`/devices`
+`/devices/:device`
+
+
+## Production
 
 
