@@ -68,8 +68,6 @@ $ yarn migrate
 $ yarn testdb 
 ```
 
-## Customization
-
 ## Base Endpoints
 ### Base
 `/`
@@ -190,12 +188,11 @@ This path sends back an Array with a single Object of device data
 	}
 ]
 ```
+## Customization
 
 ## Environments
-<p>
 	In order to use a database (in dev or in prod), a `.env` file must be present in your code base. In this file, you must set DB_HOST, DB_USER, DB_PASSWORD, and DATABASE variables. As well, a SECRET variable must be set in order authenticate any api reqests that come through.  
-	<strong>Please keep your `.env` files private by adding it to `.gitignore`.</strong>
-</p>
+	_Please keep your `.env` files private by adding it to `.gitignore`._
 
 ## Production
 
