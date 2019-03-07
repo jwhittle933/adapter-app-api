@@ -77,7 +77,7 @@ Redirects to `/api`, where you can fild all of this information again.
 `/healthcheck`
 Returns a friendly message from Adele. Test route to ensure the api is responding. 
 
-##Scoped Routes
+## Scoped Routes
 The following routes are scoped to the `/api` base path, i.e., in order to hit `/buildings`, in your request, the uri must include the base, `/api/buildings`
 
 ### All Buildings
@@ -192,6 +192,7 @@ This path sends back an Array with a single Object of device data
 
 ## Environments
 In order to use a database (in dev or in prod), a `.env` file must be present in your code base. In this file, you must set DB_HOST, DB_USER, DB_PASSWORD, and DATABASE variables. As well, a SECRET variable must be set in order authenticate any api reqests that come through.  
+
 _Please keep your `.env` files private by adding it to `.gitignore`._
 
 ## Production
