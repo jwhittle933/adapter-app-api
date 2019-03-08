@@ -9,7 +9,7 @@
     "lint": "node node_modules/eslint/bin/eslint.js *.js routes/**/*.js",
     "lint-fix": "eslint --fix .",
     "pretty": "prettier --write ./app.js ./routes/**/*.js",
-    "initdb": "node ./DataLayer/createTable.js",
+    "initdb": "node ./DataLayer/createTables.js",
     "migrate": "node ./DataLayer/migration.js",
     "testdb": "node ./DataLayer/testQuery.js"
   },

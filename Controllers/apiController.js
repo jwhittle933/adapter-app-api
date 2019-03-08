@@ -1,10 +1,9 @@
 const queries = require('../DataLayer/queries/Queries')
+const conn = require('../DataLayer/connection')
 
 const buildingsController = (req, res, conn) => {
-  /* check for Authentication
-   * Query database
-   * Send res
-   */
+  const { queryForListOf } = queries
+  let buldings = queryForListOf('buildings', 'classrooms')
 }
 
 const buildingController = (req, res, conn) => {

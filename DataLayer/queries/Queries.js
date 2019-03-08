@@ -1,5 +1,5 @@
-const queryAll = table => {
-  return `SELECT * FROM ${table};`
+const queryForListOf = (field, table) => {
+  return `SELECT DISTINCT ${field} FROM ${table};`
 }
 
 const queryFor = (table, field, param) => {
