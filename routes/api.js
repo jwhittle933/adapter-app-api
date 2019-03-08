@@ -4,7 +4,7 @@ const router = express.Router()
 const displayLogTime = require('./Utils/timeHelpers.js')
 const removeDuplicates = require('./Utils/removeDuplicates.js')
 const controllers = require('../Controllers/apiController')
-const conn = require('../DataLayer/connection')
+// const conn = require('../DataLayer/connection')
 const DeviceList = require('./Data/Devicelist.js')
 const RoomList = require('./Data/Classroomlist.js')
 
@@ -19,8 +19,9 @@ router.get('/', (req, res) => {
 
 // Fetches an array of building names
 router.get('/buildings', (req, res) => {
-  let buildings = removeDuplicates(RoomList.map(x => x.building))
-  res.send(buildings)
+  controllers.buildingsController(req, res)
+  // let buildings = removeDuplicates(RoomList.map(x => x.building))
+  // res.send(buildings)
 })
 
 // Fetches an array of room objects based on the value passed in for :building

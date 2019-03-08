@@ -18,22 +18,15 @@ const close = () => {
 }
 
 /* Controller Methods */
-const buildingsController = (req, res, conn) => {
-  const connection = connect()
-  const err = connection.on('error', () => {
-    return err
-  })
-
-  if (err) return `There was an error: ${err.code}.`
+const buildingsController = (req, res) => {
+  const resp = connect()
+  if (resp) return `There was an error: ${resp.code}.`
   const { queryForListOf } = queries
-  let query = conn.query(
-    queryForListOf('building', 'classrooms'),
-    (err, results) => {
-      //
-    },
-  )
-  res.send(query)
-
+  conn.query(queryForListOf('building', 'classrooms'), (err, results) => {
+    if (err) return err
+    console.log(results.map(x => x.building))
+    res.status(200).json(results.map(x => x.building))
+  })
   close()
 }
 
