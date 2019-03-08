@@ -7,5 +7,6 @@ const queryFor = (table, field, param) => {
 }
 
 module.exports = {
-  queryAll,
+  queryForListOf,
+  queryFor,
 }

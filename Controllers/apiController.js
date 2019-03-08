@@ -1,9 +1,32 @@
 const queries = require('../DataLayer/queries/Queries')
 const conn = require('../DataLayer/connection')
 
+/* Database Connection Helper Methods */
+const connect = () => {
+  conn.connect(err => {
+    if (err) return console.error(`error connecting: ${err.stack}`)
+    console.log(`\nConnected as: ${conn.threadId}\n`)
+  })
+}
+
+const close = () => {
+  conn.end()
+}
+
+/* Controller Methods */
 const buildingsController = (req, res, conn) => {
+  connect() // test to make sure of connection; break if not
+
   const { queryForListOf } = queries
-  let buldings = queryForListOf('buildings', 'classrooms')
+  let query = conn.query(
+    queryForListOf('building', 'classrooms'),
+    (err, results) => {
+      //
+    },
+  )
+  res.send(query)
+
+  close()
 }
 
 const buildingController = (req, res, conn) => {
