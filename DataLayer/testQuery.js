@@ -21,7 +21,7 @@ conn.query(queryForListOf('building', 'classrooms'), (err, results) => {
     console.error(err)
     throw err
   }
-  console.info(`Successfully queried ${results[0]}`)
+  console.info(`Successfully queried ${results}`)
 })
 
 conn.end()

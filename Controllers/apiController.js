@@ -4,7 +4,10 @@ const conn = require('../DataLayer/connection')
 /* Database Connection Helper Methods */
 const connect = () => {
   conn.connect(err => {
-    if (err) return console.error(`error connecting: ${err.stack}`)
+    if (err) {
+      console.log(`${err}`)
+      return err.fatal
+    }
     console.log(`\nConnected as: ${conn.threadId}\n`)
   })
 }
@@ -15,8 +18,12 @@ const close = () => {
 
 /* Controller Methods */
 const buildingsController = (req, res, conn) => {
-  connect() // test to make sure of connection; break if not
+  const connection = connect()
+  const err = connection.on('error', () => {
+    return error
+  })
 
+  if (err) return `There was an error: ${error.code}.`
   const { queryForListOf } = queries
   let query = conn.query(
     queryForListOf('building', 'classrooms'),
