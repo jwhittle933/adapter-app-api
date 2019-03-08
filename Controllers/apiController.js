@@ -30,39 +30,34 @@ const buildingsController = (req, res) => {
   close()
 }
 
-const buildingController = (req, res, conn) => {
-  /* check for Authentication
-   * Query database
-   * Send res
-   */
+const buildingController = (req, res) => {
+  const resp = connect()
+  if (resp) return `There was an error: ${resp.code}.`
+  close()
 }
 
-const roomsController = (req, res, conn) => {
-  /* check for Authentication
-   * Query database
-   * Send res
-   */
+const roomsController = (req, res) => {
+  const resp = connect()
+  if (resp) return `There was an error: ${resp.code}.`
+  close()
 }
 
-const roomController = (req, res, conn) => {
-  /* check for Authentication
-   * Query database
-   * Send res
-   */
+const roomController = (req, res) => {
+  const resp = connect()
+  if (resp) return `There was an error: ${resp.code}.`
+  close()
 }
 
-const deviceController = (req, res, conn) => {
-  /* check for Authentication
-   * Query database
-   * Send res
-   */
+const deviceController = (req, res) => {
+  const resp = connect()
+  if (resp) return `There was an error: ${resp.code}.`
+  close()
 }
 
-const devicesController = (req, res, conn) => {
-  /* check for Authentication
-   * Query database
-   * Send res
-   */
+const devicesController = (req, res) => {
+  const resp = connect()
+  if (resp) return `There was an error: ${resp.code}.`
+  close()
 }
 
 const controllers = {
