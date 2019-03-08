@@ -3,7 +3,7 @@ const queryForListOf = (field, table) => {
 }
 
 const queryFor = (table, field, param) => {
-  return `SELECT * from ${table} WHERE ${field} = ${param}`
+  return `SELECT * from classrooms WHERE ${field} = ${param}`
 }
 
 module.exports = {

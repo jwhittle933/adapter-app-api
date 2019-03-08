@@ -39,6 +39,12 @@ const buildingController = (req, res) => {
 const roomsController = (req, res) => {
   const resp = connect()
   if (resp) return `There was an error: ${resp.code}.`
+  const { queryFor } = queries
+  conn.query(queryFor('building', req.params.building), (err, results) => {
+    if (err) return err
+    console.log(results.map(x => x.building))
+    res.status(200).json(results.map(x => x.building))
+  })
   close()
 }
 
