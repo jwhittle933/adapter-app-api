@@ -10,7 +10,7 @@
 <p align="center">
   <a href="http://jonathanwhittledev.com" target="_blank">Jonathan Whittle</a> •
   <a href="#scripts">Scripts</a> •
-  <a href="#customization">Customization</a> •
+  <a href="#configurationi">Configuration</a> •
   <a href="#base-endpoints">Base Enpoints</a> •
   <a href="#scoped-endpoints">Scoped Enpoints</a> •
   <a href="#environments">Environments</a> •
@@ -82,7 +82,7 @@ The following routes are scoped to the `/api` base path, i.e., in order to hit `
 
 ### All Buildings
 `/buildings`
-This path return an Array of building names.
+This path returns an Array of building names.
 ```json
 [
 	"norton",
@@ -188,12 +188,13 @@ This path sends back an Array with a single Object of device data
 	}
 ]
 ```
-## Customization
+## Configuration
+The routes are found 
 
 ## Environments
 In order to use a database (in dev or in prod), a `.env` file must be present in your code base. In this file, you must set DB_HOST, DB_USER, DB_PASSWORD, and DATABASE variables. As well, a SECRET variable must be set in order authenticate any api reqests that come through.  
 
-_Please keep your `.env` files private by adding it to `.gitignore`._
+_Please keep your `.env` file private by adding it to `.gitignore`._
 
 ## Production
 
