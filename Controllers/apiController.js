@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const queries = require('../DataLayer/queries/Queries')
 const conn = require('../DataLayer/connection')
 
@@ -20,10 +21,10 @@ const close = () => {
 const buildingsController = (req, res, conn) => {
   const connection = connect()
   const err = connection.on('error', () => {
-    return error
+    return err
   })
 
-  if (err) return `There was an error: ${error.code}.`
+  if (err) return `There was an error: ${err.code}.`
   const { queryForListOf } = queries
   let query = conn.query(
     queryForListOf('building', 'classrooms'),
