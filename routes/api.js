@@ -3,7 +3,6 @@ const express = require('express')
 const router = express.Router()
 const displayLogTime = require('./Utils/timeHelpers.js')
 const Controllers = require('../Controllers/apiController')
-// const conn = require('../DataLayer/connection')
 const DeviceList = require('./Data/Devicelist.js')
 const RoomList = require('./Data/Classroomlist.js')
 
