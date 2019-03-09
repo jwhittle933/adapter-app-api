@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
 const queries = require('../DataLayer/queries/Queries')
-const conn = require('../DataLayer/connection')
+// const conn = require('../DataLayer/connection')
 
 /* Database Connection Helper Methods */
-const connect = () => {
+const connect = conn => {
   conn.connect(err => {
     if (err) {
       console.log(`${err}`)
@@ -13,13 +13,13 @@ const connect = () => {
   })
 }
 
-const close = () => {
+const close = conn => {
   conn.end()
 }
 
 /* Controller Methods */
-const buildingsController = (req, res) => {
-  const resp = connect()
+const buildingsController = (req, res, conn) => {
+  const resp = connect(conn)
   if (resp) return `There was an error: ${resp.code}.`
   const { queryForListOf } = queries
   conn.query(queryForListOf('building', 'classrooms'), (err, results) => {
@@ -27,7 +27,7 @@ const buildingsController = (req, res) => {
     console.log(results.map(x => x.building))
     res.status(200).json(results.map(x => x.building))
   })
-  close()
+  close(conn)
 }
 
 const buildingController = (req, res) => {

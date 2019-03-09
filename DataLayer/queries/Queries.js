@@ -2,7 +2,7 @@ const queryForListOf = (field, table) => {
   return `SELECT DISTINCT ${field} FROM ${table};`
 }
 
-const queryFor = (table, field, param) => {
+const queryFor = (field, param) => {
   return `SELECT * from classrooms WHERE ${field} = ${param}`
 }
 
