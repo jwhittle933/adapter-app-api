@@ -10,7 +10,6 @@ const Controllers = {
       console.log(results.map(x => x.building))
       res.status(200).json(results.map(x => x.building))
     })
-    // close(connection)
   },
   buildingController: (req, res) => {
     const resp = connect()
