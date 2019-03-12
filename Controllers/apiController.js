@@ -16,12 +16,12 @@ const Controllers = {
     if (resp) return `There was an error: ${resp.code}.`
     close()
   },
-  roomsController: (req, res, conn) => {
+  roomsController: (req, res) => {
     const { queryFor } = queries
     conn.query(
       queryFor('classrooms', 'building', req.params.building),
       (err, results) => {
-        if (err) return err
+        if (err) return console.error(err)
         console.log(results)
         res.status(200).json(results)
       },
