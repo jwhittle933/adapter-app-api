@@ -18,6 +18,25 @@ start_server()
   esac
 }
 
+check_env()
+{
+  if [ -e .env ]; then
+    echo "\nFound an .env.\n"
+    cat .env
+    echo "\n"
+    start_server
+  else
+    echo "You haven't set your environment variables in a .env file.\nWould you like to create one here? y/n"
+    read CREATE
+    if [ "$CREATE" = "n" ]; then 
+      echo "Ok. In order to use the API, a .env file must exist in the root of the repo.\nPlease create one manually."
+  else 
+      create_env
+      start_server
+    fi
+  fi
+}
+
 set_dev_env()
 {
   echo "Ok. Setting development variables...\n"
@@ -40,7 +59,7 @@ set_prod_env()
     read CREATE_SECRET
     case $CREATE_SECRET in 
       y) 
-        touch secret.env
+        create_secret_env
         set_prod_env
         ;;
       n)
@@ -56,14 +75,30 @@ set_prod_env()
 create_env() 
 {
   touch .env
-  echo "What is your database hostname?"
+  echo "\nWhat is your database hostname?"
   read DB_HOST && echo "DB_HOST=$DB_HOST" >> .env
-  echo "What is your database username?"
+  echo "\nWhat is your database username?"
   read DB_USER && echo "DB_USER=$DB_USER" >> .env
-  echo "What is your database password?"
+  echo "\nWhat is your database password?"
   read DB_PASSWORD && echo "DB_PASSWORD=$DB_PASSWORD" >> .env
-  echo "What is the name of your database?"
+  echo "\nWhat is the name of your database?"
   read DATABASE && echo "DATABASE=$DATABASE" >> .env
   echo "\nCreated .env file:"
   cat .env
+}
+
+create_secret_env()
+{
+  touch secret.env
+  echo "Created secret.env\n"
+  echo "\nWhat is your database hostname?"
+  read DB_HOST && echo "DB_HOST=$DB_HOST" >> secret.env
+  echo "\nWhat is your database username?"
+  read DB_USER && echo "DB_USER=$DB_USER" >> secret.env
+  echo "\nWhat is your database password?"
+  read DB_PASSWORD && echo "DB_PASSWORD=$DB_PASSWORD" >> secret.env
+  echo "\nWhat is the name of your database?"
+  read DATABASE && echo "DATABASE=$DATABASE" >> .secret.env
+  echo "\nWrote secret.env file:"
+  cat secret.env
 }
