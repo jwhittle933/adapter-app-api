@@ -31,12 +31,20 @@ const Controllers = {
     )
   },
   deviceController: (req, res) => {
-    if (resp) return `There was an error: ${resp.code}.`
-    close()
+    const { queryForListOf } = queries
+    conn.query(queryForListOf('*', req.params.device), (err, results) => {
+      if (err) return console.error(err)
+      console.log(results)
+      res.status(200).json(results)
+    })
   },
   devicesController: (req, res) => {
-    if (resp) return `There was an error: ${resp.code}.`
-    close()
+    const { queryForListOf } = queries
+    conn.query(queryForListOf('*', 'devices'), (err, results) => {
+      if (err) return console.error(err)
+      console.log(results)
+      res.status(200).json(results)
+    })
   },
 }
 

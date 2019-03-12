@@ -32,7 +32,7 @@ router.get('/buildings/:building/:room', (req, res) => {
 
 // Fetches array of devices
 router.get('/devices', (req, res) => {
-  res.send(DeviceList)
+  Controllers.devicesController(req, res)
 })
 
 // Fetches specific device object
