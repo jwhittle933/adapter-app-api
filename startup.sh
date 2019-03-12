@@ -13,5 +13,6 @@ else
     echo "Ok. In order to use the API, a .env file must exist in the root of the repo.\nPlease create one manually."
   else 
     create_env
+    start_server
   fi
 fi

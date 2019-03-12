@@ -5,6 +5,7 @@ start_server()
   case $ENV in 
     prod) 
       echo "Starting in ${ENV} mode.\n"
+      set_prod_env
       ;;
     dev) 
       echo "Starting in ${ENV} mode.\n"
@@ -28,6 +29,7 @@ set_dev_env()
 set_prod_env()
 {
   if [ -e secret.env ]; then
+    echo "Setting environment variables...\n"
     echo `grep "DB_HOST" secret.env` > .env
     echo `grep "DB_USER" secret.env` >> .env
     echo `grep "DB_PASSWORD" secret.env` >> .env
@@ -39,9 +41,14 @@ set_prod_env()
     case $CREATE_SECRET in 
       y) 
         touch secret.env
+        set_prod_env
         ;;
       n)
         echo "Ok. In order to run this in production,\nyou'll need to create a secret.env or\nmanually set your .env."
+        ;;
+      *) 
+        echo "Please enter 'y' or 'n'."
+        ;;
     esac
   fi
 }
