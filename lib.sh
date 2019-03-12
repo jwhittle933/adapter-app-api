@@ -1,19 +1,34 @@
 start_server() 
 {
-  echo "Would you like to start the server in dev or prod"
+  echo "Would you like to start the server in dev or prod?"
   read ENV
   case $ENV in 
     prod) 
-      echo "Ok, starting in ${ENV} mode."
+      echo "Starting in ${ENV} mode.\n"
       ;;
     dev) 
-      echo "Ok, starting in ${ENV} mode."
+      echo "Starting in ${ENV} mode.\n"
+      set_dev_env
       ;;
     *)
       echo "Sorry, that's not a valid value.\n"
       start_server
       ;;
   esac
+}
+
+set_dev_env()
+{
+  echo "Ok. Setting development variables...\n"
+  echo "DB_HOST=localhost" > .env
+  echo "DB_USER=root" >> .env
+  echo "DB_PASSWORD=[password]" >> .env
+  echo "DATABASE=adapterapi" >> .env
+  echo "SECRET=FancyBear" >> .env
+}
+set_prod_env()
+{
+
 }
 
 create_env() 
