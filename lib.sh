@@ -24,11 +24,26 @@ set_dev_env()
   echo "DB_USER=root" >> .env
   echo "DB_PASSWORD=[password]" >> .env
   echo "DATABASE=adapterapi" >> .env
-  echo "SECRET=FancyBear" >> .env
 }
 set_prod_env()
 {
-
+  if [ -e secret.env ]; then
+    echo `grep "DB_HOST" secret.env` > .env
+    echo `grep "DB_USER" secret.env` >> .env
+    echo `grep "DB_PASSWORD" secret.env` >> .env
+    echo `grep "DB_PORT" secret.env` >> .env
+    echo `grep "DATABASE" secret.env` >> .env
+  else 
+    echo "This repo doesn't have a secret.env.\nThis file holds your secret credientials.\nWould you like to create one now? y/n"
+    read CREATE_SECRET
+    case $CREATE_SECRET in 
+      y) 
+        touch secret.env
+        ;;
+      n)
+        echo "Ok. In order to run this in production,\nyou'll need to create a secret.env or\nmanually set your .env."
+    esac
+  fi
 }
 
 create_env() 
