@@ -6,7 +6,6 @@ if [ -e .env ]; then
   cat .env
   echo "\n"
   start_server
-  echo "Ok, starting in ${ENV} mode."
 else
   echo "You haven't set your environment variables in a .env file.\nWould you like to create one here? y/n"
   read CREATE

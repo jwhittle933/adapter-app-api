@@ -2,10 +2,18 @@ start_server()
 {
   echo "Would you like to start the server in dev or prod"
   read ENV
-  if [ -z "$ENV" ]; then
-    echo "You must provide a value."
-    start_server
-  fi
+  case $ENV in 
+    prod) 
+      echo "Ok, starting in ${ENV} mode."
+      ;;
+    dev) 
+      echo "Ok, starting in ${ENV} mode."
+      ;;
+    *)
+      echo "Sorry, that's not a valid value.\n"
+      start_server
+      ;;
+  esac
 }
 
 create_env() 
