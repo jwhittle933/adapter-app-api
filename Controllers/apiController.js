@@ -31,30 +31,13 @@ const Controllers = {
     )
   },
   deviceController: (req, res) => {
-    const resp = connect()
     if (resp) return `There was an error: ${resp.code}.`
     close()
   },
   devicesController: (req, res) => {
-    const resp = connect()
     if (resp) return `There was an error: ${resp.code}.`
     close()
   },
-}
-
-/* Database Connection Helper Methods */
-const connect = conn => {
-  conn.connect(err => {
-    if (err) {
-      console.log(`${err}`)
-      return err.fatal
-    }
-    console.log(`\nConnected as: ${conn.threadId}\n`)
-  })
-}
-
-const close = conn => {
-  conn.end()
 }
 
 module.exports = Controllers
