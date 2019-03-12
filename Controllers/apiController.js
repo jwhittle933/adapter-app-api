@@ -11,27 +11,24 @@ const Controllers = {
       res.status(200).json(results.map(x => x.building))
     })
   },
-  buildingController: (req, res) => {
-    const resp = connect()
-    if (resp) return `There was an error: ${resp.code}.`
-    close()
-  },
   roomsController: (req, res) => {
-    const { queryFor } = queries
+    const { queryForBuilding } = queries
+    conn.query(queryForBuilding(req.params.building), (err, results) => {
+      if (err) return console.error(err)
+      console.log(results)
+      res.status(200).json(results)
+    })
+  },
+  roomController: (req, res) => {
+    const { queryForRoom } = queries
     conn.query(
-      queryFor('classrooms', 'building', req.params.building),
+      queryForRoom(req.params.building, req.params.room),
       (err, results) => {
         if (err) return console.error(err)
         console.log(results)
         res.status(200).json(results)
       },
     )
-    // close(connection)
-  },
-  roomController: (req, res) => {
-    const resp = connect()
-    if (resp) return `There was an error: ${resp.code}.`
-    close()
   },
   deviceController: (req, res) => {
     const resp = connect()

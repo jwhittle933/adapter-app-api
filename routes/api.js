@@ -27,12 +27,7 @@ router.get('/buildings/:building', (req, res) => {
 
 // Fetches info for specific room by :building and :room
 router.get('/buildings/:building/:room', (req, res) => {
-  const building = req.params.building
-  const room = req.params.room
-  let data = RoomList.filter(x => x.building === building).filter(
-    x => x.roomNumber == room,
-  )
-  res.send(data)
+  Controllers.roomController(req, res)
 })
 
 // Fetches array of devices
