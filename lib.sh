@@ -1,18 +1,18 @@
 start_server() 
 {
-  echo "Would you like to start the server in dev or prod?"
+  echo "\nWould you like to start the server in dev or prod?"
   read ENV
   case $ENV in 
     prod) 
-      echo "Starting in ${ENV} mode.\n"
+      echo "\nStarting in ${ENV} mode.\n"
       set_prod_env
       ;;
     dev) 
-      echo "Starting in ${ENV} mode.\n"
+      echo "\nStarting in ${ENV} mode.\n"
       set_dev_env
       ;;
     *)
-      echo "Sorry, that's not a valid value.\n"
+      echo "\nSorry, that's not a valid value.\n"
       start_server
       ;;
   esac
@@ -39,10 +39,10 @@ check_env()
 
 set_dev_env()
 {
-  echo "Ok. Setting development variables...\n"
+  echo "Setting development variables...\n"
   echo "DB_HOST=localhost" > .env
   echo "DB_USER=root" >> .env
-  echo "DB_PASSWORD=[password]" >> .env
+  echo "DB_PASS=[password]" >> .env
   echo "DATABASE=adapterapi" >> .env
 }
 set_prod_env()
@@ -51,7 +51,7 @@ set_prod_env()
     echo "Setting environment variables...\n"
     echo `grep "DB_HOST" secret.env` > .env
     echo `grep "DB_USER" secret.env` >> .env
-    echo `grep "DB_PASSWORD" secret.env` >> .env
+    echo `grep "DB_PASS" secret.env` >> .env
     echo `grep "DB_PORT" secret.env` >> .env
     echo `grep "DATABASE" secret.env` >> .env
   else 
@@ -90,7 +90,7 @@ create_env()
 create_secret_env()
 {
   touch secret.env
-  echo "Created secret.env\n"
+  echo "Created secret.env"
   echo "\nWhat is your database hostname?"
   read DB_HOST && echo "DB_HOST=$DB_HOST" >> secret.env
   echo "\nWhat is your database username?"

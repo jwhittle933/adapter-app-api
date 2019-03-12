@@ -1,17 +1,21 @@
 #!/bin/sh
 . ./lib.sh
 
-
 if [ -e .env ]; then
-  echo "\nFound an .env.\n"
+  echo "\nFound an .env\n"
   cat .env
   echo "\n"
   start_server
 else
-  echo "You haven't set the environment variables in a .env file.\nWould you like to create one here? y/n"
+  echo "You haven't set the necessary environment variables in a .env file.\nWould you like to create one here? y/n"
   read CREATE
   if [ "$CREATE" = "n" ]; then 
-    echo "Ok. In order to use the API, a .env file must exist in the root of the repo.\nPlease create one manually."
+    echo "\nIn order to run the API, a .env file must exist in the following format at the root of the repo."
+    echo "\nDB_HOST=<your host name>"
+    echo "DB_USER=<your username>"
+    echo "DB_PASS=<your password>"
+    echo "DATABASE=<your db name>"
+    echo "\nPlease create one manually."
   else 
     create_env
     start_server
