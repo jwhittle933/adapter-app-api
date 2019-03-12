@@ -2,8 +2,7 @@ const conn = require('./connection')
 
 conn.connect(err => {
   if (err) {
-    console.error(`error connecting: ${err.stack}`)
-    return
+    return console.error(`error connecting: ${err.stack}`)
   }
   console.log(`Connected as: ${conn.threadId}`)
 })

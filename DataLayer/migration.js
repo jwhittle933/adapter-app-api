@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const conn = require('./connection')
 const rooms = require('../routes/Data/Classroomlist.js')
 const devices = require('../routes/Data/Devicelist.js')
