@@ -7,15 +7,14 @@ start_server()
     echo "You must provide a value."
     start_server
   fi
-  echo "Ok, starting in ${ENV} mode."
 }
-
 
 if [ -e .env ]; then
   echo "\nFound your .env.\n"
   cat .env
   echo "\n"
   start_server
+  echo "Ok, starting in ${ENV} mode."
 else
   echo "You haven't set your environment variables in a .env file.\nWould you like to create one here? y/n"
   read CREATE
