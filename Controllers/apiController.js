@@ -15,7 +15,11 @@ const Controllers = {
     const { queryForBuilding } = queries
     conn.query(queryForBuilding(req.params.building), (err, results) => {
       if (err) return console.error(err)
-      console.log(results)
+      console.log(
+        `${req.method} request to ${req.path} accessed by ${
+          req.hostname
+        } for rooms in ${req.params.building}`,
+      )
       res.status(200).json(results)
     })
   },
@@ -31,8 +35,8 @@ const Controllers = {
     )
   },
   deviceController: (req, res) => {
-    const { queryForListOf } = queries
-    conn.query(queryForListOf('*', req.params.device), (err, results) => {
+    const { queryForDevice } = queries
+    conn.query(queryForDevice(req.params.device), (err, results) => {
       if (err) return console.error(err)
       console.log(results)
       res.status(200).json(results)
