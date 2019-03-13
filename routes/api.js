@@ -37,8 +37,7 @@ router.get('/devices', (req, res) => {
 
 // Fetches specific device object
 router.get('/devices/:device', (req, res) => {
-  let device = req.params.device
-  res.send(DeviceList.filter(x => x._id === device))
+  Controllers.deviceController(req, res)
 })
 
 module.exports = router
