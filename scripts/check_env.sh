@@ -1,7 +1,7 @@
 if [ -e .env ]; then
   echo "\nFound an .env.\n"
   cat .env
-  echo "\n"
+  . ./execute.sh
 else
   echo "You haven't set your development environment variables in a .env file.\nWould you like to create one here? (y/n)"
   read CREATE
@@ -19,5 +19,6 @@ else
     read DATABASE && echo "DATABASE=$DATABASE" >> .env
     echo "\nCreated .env file:"
     cat .env
+    . ./execute.sh
   fi
 fi
