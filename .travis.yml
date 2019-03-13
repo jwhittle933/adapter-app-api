@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - '11'
+env:
+  - CXX=g++-4.8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+deploy:
+  provider: heroku
+  api_key:
+    secure: U6rrtA8mV+0hauMoRYS+LtHaFP61l0yvySdZeevyH6xCZZN0xtDYusU/huq9VjJIJVfEoHmBDQSWkRzeRxajPR8b7V73l9P981BPkHGarn2JB5H+pxdn2z1Hxz4oI8MiA7BtitqshqZ0RzjgZoQR3UW2L+KtxalwBWB/re70je4ijAoBOBRoNCrnc61lGl+JHPu/Wp6hch+qqK+bu89InF3rEwS+vjps3utsPf3D24ZPjFRnD8Q2W6al68JdEMamAMW/Dzq6e3rERqBVGXg1npVhf/zIFRBTVpTlEa7DxUOkejmD0E4csUcnjolPB6K5rSilAmapJF3F/C9hfPNK7tfF4tjHySDcetA7Dvs+tkvQD4Z+nxHrpFDzWiW6V945iuzIADAT7P4+mv1nXYxjcpdZDcd2+rweARzR8Udqik+Cqyh9lghFVO69hUSEsxOJelD2cFnKGbilxJ8vqnuTdX+tI3+2LlVNTf64b82thaU4yuVDWqvpQU0MTG+6Mp6mqYgnfn+55svCUITUO5P6dEqGF62/ekcNlSWOg2Ij6MFvg9tnEVv8cYg5chGdglNxCXEOsqCaE869D8XRrb91cUt2TlH67siPKXjLUQf2pmn/jNOZfBGTdowqOdQzne0nCBWg5HLbQ3G1QUZgBFB/To+74arTuZjIembB/KLwY/4=
+  app: adapter-api
