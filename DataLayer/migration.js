@@ -1,74 +1,48 @@
 /* eslint-disable no-console */
 const conn = require('./connection')
-const rooms = require('../routes/Data/Classroomlist.js')
-const devices = require('../routes/Data/Devicelist.js')
 
 conn.connect(err => {
-  err
-    ? console.error(`error connecting: ${err.stack}`)
-    : console.log(`Connected as: ${conn.threadId}`)
+  if (err) {
+    return console.error(`error connecting: ${err.stack}`)
+  }
+  console.log(`Connected as: ${conn.threadId}`)
 })
 
-// Migrate room data
-rooms.map(room => {
-  conn.query(
-    `
-		INSERT INTO classrooms (
-			building, 
-			roomNumber, 
-			hasHDMI, 
-			hasVGA
-		)
-		VALUES (
-			'${room.building}', 
-			'${room.roomNumber}', 
-			'${room.hasHDMI}', 
-			'${room.hasVGA}'
-		);
-	`,
-    (err, results) => {
-      if (err) {
-        console.error(err)
-        throw err
-      }
-      console.info(`Succesfully entered ${results.length} rows.`)
-    },
-  )
-})
+// Create devices table
+conn.query(
+  `
+	CREATE TABLE IF NOT EXISTS devices (
+		id varchar(200) NOT NULL PRIMARY KEY,
+		name varchar(200) NOT NULL, 
+		hasHDMI varchar(200) NOT NULL,
+		hasVGA varchar(200) NOT NULL,
+		adapterHDMI varchar(200) NOT NULL,
+		adapterVGA varchar(200) NOT NULL, 
+		linkHDMI varchar(200) NOT NULL, 
+		linkVGA varchar(200) NOT NULL
+	);
+`,
+  (err, rows, fields) => {
+    if (err) throw err
+    console.info(`${rows} affected. ${fields} added.`)
+  },
+)
 
-// Migrate device data
-devices.map(device => {
-  conn.query(
-    `
-		INSERT INTO devices (
-			id, 
-			name, 
-			hasHDMI, 
-			hasVGA, 
-			adapterHDMI, 
-			adapterVGA, 
-			linkHDMI, 
-			linkVGA
-		)
-		VALUES (
-			'${device._id}', 
-			'${device.name}', 
-			'${device.hasHDMI}', 
-			'${device.hasVGA}', 
-			'${device.adapterHDMI}', 
-			'${device.adapterVGA}', 
-			'${device.linkHDMI}', 
-			'${device.linkVGA}'
-		);
-	`,
-    (err, results) => {
-      if (err) {
-        console.error(err)
-        throw err
-      }
-      console.info(`Succesfully entered ${results.length} rows.`)
-    },
-  )
-})
+// Create classroom table
+conn.query(
+  `
+	CREATE TABLE IF NOT EXISTS classrooms (
+		id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+		building varchar(200) NOT NULL,
+		roomNumber varchar(20) NOT NULL, 
+		hasHDMI varchar(200) NOT NULL,
+		hasVGA varchar(200) NOT NULL
+	);
+`,
+  (err, rows, fields) => {
+    if (err) throw err
+    console.info(`${rows} affected. ${fields} added.`)
+  },
+)
 
 conn.end()

@@ -30,8 +30,18 @@ $ git clone https://github.com/jwhittle933/adapter-app-api.git && cd adapter-app
 ```
 
 ```bash
+# Stars cli helper for setting environment variables. Starts server on completion.
+$ yarn scriptstart
+```
+
+```bash
 # Starts API endpoints on port 4000, or user defined port. Navigate to localhost:4000/api
 $ yarn start
+```
+
+```bash
+# Runs testing suite
+$ yarn test
 ```
 
 ```bash
@@ -55,8 +65,8 @@ $ yarn pretty
 ```
 
 ```bash
-# Runs createTable.js. This module creates tables in MySQL database. User created .env is required.
-$ yarn initdb
+# Runs createTable.js. This module creates tables in MySQL database. Can be used to migrate to remote or local database
+$ yarn migrate
 ```
 
 ```bash

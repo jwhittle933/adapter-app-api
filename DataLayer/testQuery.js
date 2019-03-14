@@ -1,3 +1,4 @@
+/*  eslint-disable no-console */
 const conn = require('./connection')
 const queries = require('./queries/Queries')
 
@@ -21,7 +22,7 @@ conn.query(queryForListOf('building', 'classrooms'), (err, results) => {
     console.error(err)
     throw err
   }
-  console.info(`Successfully queried ${results}`)
+  results.forEach(x => console.info(`Successfully queried ${x}`))
 })
 
 conn.end()
