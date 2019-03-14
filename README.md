@@ -208,7 +208,7 @@ This application relies on a MySQL database, locally and remotely. The app at `/
 LOCAL=true
 DB_HOST=localhost
 DB_USER=root
-DB_PASSWORD=[password]
+DB_PASSWORD=[your password here]
 DATABASE=adapterapi
 ```
 
