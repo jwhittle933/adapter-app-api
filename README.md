@@ -9,6 +9,8 @@
 
 [![Build Status](https://travis-ci.com/jwhittle933/adapter-app-api.svg?branch=master)](https://travis-ci.com/jwhittle933/adapter-app-api)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jwhittle933/adapter-app-api.svg)](https://greenkeeper.io/)
+
 <p align="center">
   <a href="http://jonathanwhittledev.com" target="_blank">Jonathan Whittle</a> •
   <a href="https://adapter-api.herokuapp.com/api/">Interface</a> •
@@ -23,8 +25,6 @@
 <hr>
 
 ## Scripts
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/jwhittle933/adapter-app-api.svg)](https://greenkeeper.io/)
 
 ```bash
 # Clone Repo and Install Dependencies
