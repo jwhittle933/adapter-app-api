@@ -16,8 +16,6 @@
   <a href="#configurationi">Configuration</a> •
   <a href="#base-endpoints">Base Enpoints</a> •
   <a href="#scoped-endpoints">Scoped Enpoints</a> •
-  <a href="#environments">Environments</a> •
-  <a href="#production">Production</a> •
   <a href="https://github.com/jwhittle933/adapter-app-api/archive/master.zip">Download</a> •
   <a href="https://github.com/jwosborn/Adapter-app">AdapterApp</a> •
 </p>
@@ -136,15 +134,6 @@ This path returns an Array of Objects with data for a single building, selected 
 ]
 ```
 
-### Rooms in a Building
-
-`/buildings/:building/rooms`
-This path returns an Array of rooms for a specific building.
-
-```json
-[108, 135, "Ingram"]
-```
-
 ### Room Info
 
 `/buildings/:building/:room`
@@ -213,14 +202,14 @@ This path sends back an Array with a single Object of device data
 
 ## Configuration
 
-The routes are found
+This application relies on a MySQL database, locally and remotely. The app at `/bin/www` calls `require('dotenv').config()`, which searches the repo for a `.env` file:
 
-## Environments
+```bash
+LOCAL=true
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=[password]
+DATABASE=adapterapi
+```
 
-In order to use a database (in dev or in prod), a `.env` file must be present in your code base. In this file, you must set DB_HOST, DB_USER, DB_PASSWORD, and DATABASE variables. As well, a SECRET variable must be set in order authenticate any api reqests that come through.
-
-_Please keep your `.env` file private by adding it to `.gitignore`._
-
-`echo .env >> .gitignore`
-
-## Production
+`LOCAL` sets `process.env.LOCAL` to true so that the app can run in dev mode and access your local server. Make sure this file is ignored in `.gitignore` so that it doesn't get pushed to prod. When `/DataLayer/connection.js` reads the env locally, it'll find the `LOCAL` variable and access the local database. In prod, this variable will not exist and the application will grab the remote database (which you need to configure).
