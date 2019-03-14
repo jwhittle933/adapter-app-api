@@ -68,7 +68,8 @@ $ yarn pretty
 ```
 
 ```bash
-# Runs createTable.js. This module creates tables in MySQL database. Can be used to migrate to remote or local database
+# This module creates tables in MySQL database.
+# Can be used to migrate to remote or local database
 $ yarn migrate
 ```
 
