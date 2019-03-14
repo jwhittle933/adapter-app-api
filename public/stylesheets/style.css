@@ -5,8 +5,16 @@ body {
 
 a {
   color: #00b7ff;
+  text-decoration: none;
 }
 
 p {
   font-family: monospace;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 0.5vw;
+}
+p:hover {
+  box-shadow: 2px 5px 3px 0px #ccc;
+  cursor: pointer;
 }
