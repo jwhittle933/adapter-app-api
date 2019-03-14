@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/jwhittle933/adapter-app-api.svg?branch=master)](https://travis-ci.com/jwhittle933/adapter-app-api)
+
 <h1 align="center">
   <br>
   <img src="https://picsum.photos/800/400/">
