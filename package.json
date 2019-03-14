@@ -11,8 +11,8 @@
     "lint": "node node_modules/eslint/bin/eslint.js *.js routes/**/*.js",
     "lint-fix": "eslint --fix .",
     "pretty": "prettier --write ./app.js ./routes/**/*.js",
-    "migrate": "node ./DataLayer/createTables.js",
-    "seed": "node ./DataLayer/migration.js",
+    "migrate": "node ./DataLayer/migration.js",
+    "seed": "node ./DataLayer/seed.js",
     "testdb": "node ./DataLayer/testQuery.js"
   },
   "dependencies": {
