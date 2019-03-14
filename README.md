@@ -24,6 +24,8 @@
 
 ## Scripts
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jwhittle933/adapter-app-api.svg)](https://greenkeeper.io/)
+
 ```bash
 # Clone Repo and Install Dependencies
 $ git clone https://github.com/jwhittle933/adapter-app-api.git && cd adapter-app-api && yarn install
