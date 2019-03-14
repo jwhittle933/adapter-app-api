@@ -3,8 +3,6 @@ const path = require('path')
 const logger = require('morgan')
 const helmet = require('helmet')
 const cors = require('cors')
-const uuid = require('uuid/v4')
-const session = require('express-session')
 const apiRouter = require('./routes/api')
 const app = express()
 
