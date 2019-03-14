@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const conn = require('./connection')
 
 conn.connect(err => {
