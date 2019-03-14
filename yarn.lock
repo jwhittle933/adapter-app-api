@@ -158,10 +158,10 @@ ansi-regex@^3.0.0:
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-3.0.0.tgz#ed0317c322064f79466c02966bddb605ab37d998"
   integrity sha1-7QMXwyIGT3lGbAKWa922Bas32Zg=
 
-ansi-regex@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-4.0.0.tgz#70de791edf021404c3fd615aa89118ae0432e5a9"
-  integrity sha512-iB5Dda8t/UqpPI/IjsejXu5jOGDrzn41wJyljwPH65VCIbk6+1BzFIMJGFwTNrYXT1CrD+B4l19U7awiQ8rk7w==
+ansi-regex@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-4.1.0.tgz#8b9f8f08cf1acb843756a839ca8c7e3168c51997"
+  integrity sha512-1apePfXM1UOSqw0o9IiFAovVz9M5S1Dg+4TrDwfMewQ6p/rmMueb7tWZjQ1rx4Loy1ArBggoqGpfqqdI4rondg==
 
 ansi-styles@^2.2.1:
   version "2.2.1"
@@ -271,9 +271,9 @@ astral-regex@^1.0.0:
   integrity sha512-+Ryf6g3BKoRc7jfp7ad8tM4TtMiaWvbF/1/sQcZPkkS7ag3D5nMBCe2UfOTONtAkaG0tO0ij3C5Lwmf1EiyjHg==
 
 async-each@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/async-each/-/async-each-1.0.1.tgz#19d386a1d9edc6e7c1c85d388aedbcc56d33602d"
-  integrity sha1-GdOGodntxufByF04iu28xW0zYC0=
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/async-each/-/async-each-1.0.2.tgz#8b8a7ca2a658f927e9f307d6d1a42f4199f0f735"
+  integrity sha512-6xrbvN0MOBKSJDdonmSSz2OwFSgxRaVtBDes26mj9KIGtDo+g9xosFRSC+i1gQh2oAN/tQ62AI/pGZGQjVOiRg==
 
 asynckit@^0.4.0:
   version "0.4.0"
@@ -1713,9 +1713,9 @@ helmet-csp@2.7.1:
     platform "1.3.5"
 
 helmet@^3.15.1:
-  version "3.15.1"
-  resolved "https://registry.yarnpkg.com/helmet/-/helmet-3.15.1.tgz#2c80d1a59138b6f23929605afca4b1c88b3298ec"
-  integrity sha512-hgoNe/sjKlKNvJ3g9Gz149H14BjMMWOCmW/DTXl7IfyKGtIK37GePwZrHNfr4aPXdKVyXcTj26RgRFbPKDy9lw==
+  version "3.16.0"
+  resolved "https://registry.yarnpkg.com/helmet/-/helmet-3.16.0.tgz#7df41a4bfe4c83d90147c1e30d70893f92a9d97c"
+  integrity sha512-rsTKRogc5OYGlvSHuq5QsmOsOzF6uDoMqpfh+Np8r23+QxDq+SUx90Rf8HyIKQVl7H6NswZEwfcykinbAeZ6UQ==
   dependencies:
     depd "2.0.0"
     dns-prefetch-control "0.1.0"
@@ -1727,8 +1727,8 @@ helmet@^3.15.1:
     helmet-csp "2.7.1"
     hide-powered-by "1.0.0"
     hpkp "2.0.0"
-    hsts "2.1.0"
-    ienoopen "1.0.0"
+    hsts "2.2.0"
+    ienoopen "1.1.0"
     nocache "2.0.0"
     referrer-policy "1.1.0"
     x-xss-protection "1.1.0"
@@ -1755,10 +1755,12 @@ hpkp@2.0.0:
   resolved "https://registry.yarnpkg.com/hpkp/-/hpkp-2.0.0.tgz#10e142264e76215a5d30c44ec43de64dee6d1672"
   integrity sha1-EOFCJk52IVpdMMROxD3mTe5tFnI=
 
-hsts@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/hsts/-/hsts-2.1.0.tgz#cbd6c918a2385fee1dd5680bfb2b3a194c0121cc"
-  integrity sha512-zXhh/DqgrTXJ7erTN6Fh5k/xjMhDGXCqdYN3wvxUvGUQvnxcFfUd8E+6vLg/nk3ss1TYMb+DhRl25fYABioTvA==
+hsts@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/hsts/-/hsts-2.2.0.tgz#09119d42f7a8587035d027dda4522366fe75d964"
+  integrity sha512-ToaTnQ2TbJkochoVcdXYm4HOCliNozlviNsg+X2XQLQvZNI/kCHR9rZxVYpJB3UPcHz80PgxRyWQ7PdU1r+VBQ==
+  dependencies:
+    depd "2.0.0"
 
 http-errors@1.6.3, http-errors@~1.6.2, http-errors@~1.6.3:
   version "1.6.3"
@@ -1800,10 +1802,10 @@ iconv-lite@^0.4.24, iconv-lite@^0.4.4:
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
-ienoopen@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/ienoopen/-/ienoopen-1.0.0.tgz#346a428f474aac8f50cf3784ea2d0f16f62bda6b"
-  integrity sha1-NGpCj0dKrI9QzzeE6i0PFvYr2ms=
+ienoopen@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/ienoopen/-/ienoopen-1.1.0.tgz#411e5d530c982287dbdc3bb31e7a9c9e32630974"
+  integrity sha512-MFs36e/ca6ohEKtinTJ5VvAJ6oDRAYFdYXweUnGY9L9vcoqFOU4n2ZhmJ0C4z/cwGZ3YIQRSB3XZ1+ghZkY5NQ==
 
 ignore-by-default@^1.0.1:
   version "1.0.1"
@@ -2639,9 +2641,9 @@ mysql@^2.16.0:
     sqlstring "2.3.1"
 
 nan@^2.9.2:
-  version "2.12.1"
-  resolved "https://registry.yarnpkg.com/nan/-/nan-2.12.1.tgz#7b1aa193e9aa86057e3c7bbd0ac448e770925552"
-  integrity sha512-JY7V6lRkStKcKTvHO5NVSQRv+RV+FIL5pvDoLiAtSL9pKlC5x9PKQcZDsq7m4FO4d57mkhC6Z+QhAh3Jdk5JFw==
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.13.0.tgz#7bdfc27dd3c060c46e60b62c72b74012d1a4cd68"
+  integrity sha512-5DDQvN0luhXdut8SCwzm/ZuAX2W+fwhqNzfq7CZ+OJzQ6NwpcqmIGyLD1R8MEt7BeErzcsI0JLr4pND2pNp2Cw==
 
 nanomatch@^1.2.9:
   version "1.2.13"
@@ -3773,13 +3775,13 @@ string-width@^1.0.1:
     strip-ansi "^4.0.0"
 
 string-width@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/string-width/-/string-width-3.0.0.tgz#5a1690a57cc78211fffd9bf24bbe24d090604eb1"
-  integrity sha512-rr8CUxBbvOZDUvc5lNIJ+OC1nPVpz+Siw9VBtUjB9b6jZehZLFt0JMCZzShFHIsI8cbhm0EsNIfWJMFV3cu3Ew==
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/string-width/-/string-width-3.1.0.tgz#22767be21b62af1081574306f69ac51b62203961"
+  integrity sha512-vafcv6KjVZKSgz06oM/H6GDBrAtz8vdhQakGjFIvNrHA6y3HCF1CInLy+QLq8dTJPQ1b+KDUqDFctkdRW44e1w==
   dependencies:
     emoji-regex "^7.0.1"
     is-fullwidth-code-point "^2.0.0"
-    strip-ansi "^5.0.0"
+    strip-ansi "^5.1.0"
 
 string_decoder@~1.1.1:
   version "1.1.1"
@@ -3811,12 +3813,12 @@ strip-ansi@^4.0.0:
   dependencies:
     ansi-regex "^3.0.0"
 
-strip-ansi@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-5.0.0.tgz#f78f68b5d0866c20b2c9b8c61b5298508dc8756f"
-  integrity sha512-Uu7gQyZI7J7gn5qLn1Np3G9vcYGTVqB+lFTytnDJv83dd8T22aGH451P3jueT2/QemInJDfxHB5Tde5OzgG1Ow==
+strip-ansi@^5.0.0, strip-ansi@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-5.1.0.tgz#55aaa54e33b4c0649a7338a43437b1887d153ec4"
+  integrity sha512-TjxrkPONqO2Z8QDCpeE2j6n0M6EwxzyDgzEeGp+FbdvaJAt//ClYi6W5my+3ROlC/hZX2KACUwDfK49Ka5eDvg==
   dependencies:
-    ansi-regex "^4.0.0"
+    ansi-regex "^4.1.0"
 
 strip-eof@^1.0.0:
   version "1.0.0"
@@ -4055,9 +4057,9 @@ unzip-response@^2.0.1:
   integrity sha1-0vD3N9FrBhXnKmk17QQhRXLVb5c=
 
 upath@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/upath/-/upath-1.1.0.tgz#35256597e46a581db4793d0ce47fa9aebfc9fabd"
-  integrity sha512-bzpH/oBhoS/QI/YtbkqCg6VEiPYjSZtrHQM6/QnJS6OL9pKUFLqb3aFh4Scvwm45+7iAgiMkLhSbaZxUqmrprw==
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/upath/-/upath-1.1.2.tgz#3db658600edaeeccbe6db5e684d67ee8c2acd068"
+  integrity sha512-kXpym8nmDmlCBr7nKdIx8P2jNBa+pBpIUFRnKJ4dr8htyYGJFokkr2ZvERRtUN+9SY+JqXouNgUPtv6JQva/2Q==
 
 update-notifier@^2.5.0:
   version "2.5.0"
