@@ -158,7 +158,7 @@ This path reuturns an Array of Objects with the devices and there relevant prope
 ```json
 [ ...
   {
-    "_id": "macbook-air-2011-2014",
+    "id": "macbook-air-2011-2014",
     "name": "Macbook Air 2011-2014",
     "hasHDMI": false,
     "hasVGA": false,
@@ -168,7 +168,7 @@ This path reuturns an Array of Objects with the devices and there relevant prope
     "linkVGA": "https://www.amazon.com/s?k=thunderbolt+to+vga+adapter&ref=nb_sb_noss_2"
   },
   {
-    "_id": "macbook-pro-2011-2014",
+    "id": "macbook-pro-2011-2014",
     "name": "Macbook/Macbook Pro 2011-2014",
     "hasHDMI": true,
     "hasVGA": false,
@@ -189,7 +189,7 @@ This path sends back an Array with a single Object of device data
 ```json
 [
   {
-    "_id": "macbook-air-2011-2014",
+    "id": "macbook-air-2011-2014",
     "name": "Macbook Air 2011-2014",
     "hasHDMI": false,
     "hasVGA": false,
