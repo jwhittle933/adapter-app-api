@@ -1,8 +1,5 @@
 <h1 align="center">
-  <br>
-  <img src="https://picsum.photos/800/400/">
-  <br>
-  	API Endpoints
+  API Endpoints
   <br>
 </h1>
 <h3 align="center">For use with Adapter-App by <i>Jeremy Osborn</i></h3>
