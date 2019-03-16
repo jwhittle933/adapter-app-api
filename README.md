@@ -48,6 +48,11 @@ $ yarn watch
 ```
 
 ```bash
+# Creates bundle for frontend
+$ yarn buildf
+```
+
+```bash
 # Lints relevant .js files. Defined in .eslintrc.js
 $ yarn lint
 ```

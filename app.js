@@ -10,6 +10,7 @@ const corsOpts = {
   origin: 'http://localhost:3000',
   optionsSuccessStatus: 200,
 }
+app.set('title', 'Adapter App Api')
 
 // Cors and Security Middleware
 app.use(cors(corsOpts))

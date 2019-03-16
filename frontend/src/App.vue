@@ -4,7 +4,7 @@
       <div class="routes">
         <h1>Adapter App API</h1>
         <h2>Available Routes</h2>
-        <p v-for="route in routes" :key="route">{{ route.route }}</p>
+        <p v-for="route in routes" :key="route.route">{{ route.route }}</p>
       </div>
     </div>
     <div class="resp"></div>
@@ -12,16 +12,23 @@
 </template>
 
 <script>
+const returnBase = ''
+
 export default {
-  data: {
-    routes: [
-      { route: '/', return: '' },
-      { route: '/buildings', return: '' },
-      { route: '/buildings/:building', return: '' },
-      { route: '/buildings/:building/:room', return: '' },
-      { route: '/devices', return: '' },
-      { route: '/devices/:device', return: '' },
-    ],
+  name: 'App',
+  data() {
+    return {
+      testField: 'test',
+      routes: [
+        { route: '/', return: '' },
+        { route: '/buildings', return: '' },
+        { route: '/buildings/:building', return: '' },
+        { route: '/buildings/:building/:room', return: '' },
+        { route: '/devices', return: '' },
+        { route: '/devices/:device', return: '' },
+      ],
+      activeRoute: '',
+    }
   },
 }
 </script>
