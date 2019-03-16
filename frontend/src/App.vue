@@ -12,7 +12,36 @@
 </template>
 
 <script>
-const returnBase = ''
+const returnBase = ['norton', 'cooke', 'library', 'carver', 'rankin']
+const returnBuildings = [
+  {
+    building: 'carver',
+    roomNumber: 108,
+    hasHDMI: false,
+    hasVGA: true,
+  },
+  {
+    building: 'carver',
+    roomNumber: 135,
+    hasHDMI: false,
+    hasVGA: true,
+  },
+  {
+    building: 'carver',
+    roomNumber: 'Ingram',
+    hasHDMI: false,
+    hasVGA: true,
+  },
+]
+
+const returnBuildingRoom = [
+  {
+    building: 'carver',
+    roomNumber: 108,
+    hasHDMI: false,
+    hasVGA: true,
+  },
+]
 
 export default {
   name: 'App',
@@ -20,9 +49,9 @@ export default {
     return {
       testField: 'test',
       routes: [
-        { route: '/', return: '' },
-        { route: '/buildings', return: '' },
-        { route: '/buildings/:building', return: '' },
+        { route: '/', return: 'The server redirects to this endpoint.' },
+        { route: '/buildings', return: returnBase },
+        { route: '/buildings/:building', return: returnBuildings },
         { route: '/buildings/:building/:room', return: '' },
         { route: '/devices', return: '' },
         { route: '/devices/:device', return: '' },

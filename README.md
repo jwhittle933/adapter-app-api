@@ -158,7 +158,7 @@ This path returns an Array with a single object containing the data for a single
 This path reuturns an Array of Objects with the devices and there relevant properties
 
 ```json
-[ ...
+[
   {
     "id": "macbook-air-2011-2014",
     "name": "Macbook Air 2011-2014",
@@ -178,8 +178,7 @@ This path reuturns an Array of Objects with the devices and there relevant prope
     "adapterVGA": "Thunderbolt-VGA",
     "linkHDMI": "https://www.amazon.com/s?k=thunderbolt+to+HDMI+adapter&ref=nb_sb_noss_2",
     "linkVGA": "https://www.amazon.com/s?k=thunderbolt+to+vga+adapter&ref=nb_sb_noss_2"
-  },
-  ...
+  }
 ]
 ```
 
