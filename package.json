@@ -33,8 +33,7 @@
     "mysql": "^2.16.0",
     "nodemon": "^1.18.10",
     "prettier": "^1.16.4",
-    "pug": "2.0.0-beta11",
-    "vue": "^2.6.9"
+    "pug": "2.0.0-beta11"
   },
   "husky": {
     "hooks": {
@@ -47,9 +46,6 @@
       "prettier --write ./bin/www app.js ./routes/**/*.js",
       "git add"
     ]
-  },
-  "browser": {
-    "vue": "vue/dist/vue.common.js"
   },
   "devDependencies": {
     "chai": "^4.2.0",

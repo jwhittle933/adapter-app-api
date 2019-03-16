@@ -20,7 +20,7 @@ app.use(cors(corsOpts))
 app.use(helmet())
 app.use(logger('dev'))
 app.use(express.json())
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'frontend')))
 // app.use((req, res, next) => {
 //   const clientAuth = req.get('Client-Token')
 //   const serverAuth = process.env.SECRET
