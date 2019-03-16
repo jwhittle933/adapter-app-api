@@ -4,8 +4,6 @@
 </h1>
 <h3 align="center">For use with Adapter-App by <i>Jeremy Osborn</i></h3>
 
-[![Build Status](https://travis-ci.com/jwhittle933/adapter-app-api.svg?branch=master)](https://travis-ci.com/jwhittle933/adapter-app-api)
-
 <p align="center">
   <a href="http://jonathanwhittledev.com" target="_blank">Jonathan Whittle</a> •
   <a href="https://adapter-api.herokuapp.com/api/">Interface</a> •
@@ -16,6 +14,9 @@
   <a href="https://github.com/jwhittle933/adapter-app-api/archive/master.zip">Download</a> •
   <a href="https://github.com/jwosborn/Adapter-app">AdapterApp</a> •
 </p>
+
+[![Build Status](https://travis-ci.com/jwhittle933/adapter-app-api.svg?branch=master)](https://travis-ci.com/jwhittle933/adapter-app-api)
+[![Greenkeeper badge](https://badges.greenkeeper.io/jwhittle933/adapter-app-api.svg)](https://greenkeeper.io/)
 
 <hr>
 
