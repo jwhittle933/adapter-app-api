@@ -1,8 +1,5 @@
 <h1 align="center">
-  <br>
-  <img src="https://picsum.photos/800/400/">
-  <br>
-  	API Endpoints
+  API Endpoints
   <br>
 </h1>
 <h3 align="center">For use with Adapter-App by <i>Jeremy Osborn</i></h3>
@@ -49,6 +46,11 @@ $ yarn test
 ```bash
 # Starts API with nodemon
 $ yarn watch
+```
+
+```bash
+# Creates bundle for frontend
+$ yarn buildf
 ```
 
 ```bash
@@ -157,7 +159,7 @@ This path returns an Array with a single object containing the data for a single
 This path reuturns an Array of Objects with the devices and there relevant properties
 
 ```json
-[ ...
+[
   {
     "id": "macbook-air-2011-2014",
     "name": "Macbook Air 2011-2014",
@@ -177,8 +179,7 @@ This path reuturns an Array of Objects with the devices and there relevant prope
     "adapterVGA": "Thunderbolt-VGA",
     "linkHDMI": "https://www.amazon.com/s?k=thunderbolt+to+HDMI+adapter&ref=nb_sb_noss_2",
     "linkVGA": "https://www.amazon.com/s?k=thunderbolt+to+vga+adapter&ref=nb_sb_noss_2"
-  },
-  ...
+  }
 ]
 ```
 

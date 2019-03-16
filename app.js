@@ -10,14 +10,14 @@ const corsOpts = {
   origin: 'http://localhost:3000',
   optionsSuccessStatus: 200,
 }
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'pug')
+app.set('title', 'Adapter App Api')
 
 // Cors and Security Middleware
 app.use(cors(corsOpts))
 app.use(helmet())
+app.use(logger('dev'))
+app.use(express.json())
+app.use(express.static(path.join(__dirname, 'frontend/dist')))
 // app.use((req, res, next) => {
 //   const clientAuth = req.get('Client-Token')
 //   const serverAuth = process.env.SECRET
@@ -36,10 +36,6 @@ app.get('/healthcheck', (req, res) => {
     attr: `(– Adele, "Hello")`,
   })
 })
-
-app.use(logger('dev'))
-app.use(express.json())
-app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/api', apiRouter)
 
