@@ -10,7 +10,9 @@ router.use((req, res, next) => {
 })
 
 router.get('/', (req, res) => {
-  res.render('info')
+  res.sendFile('index.html', {
+    root: './frontend/dist/',
+  })
 })
 
 // Fetches an array of building names
