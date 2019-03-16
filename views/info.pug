@@ -1,14 +1,17 @@
 extends layout
 
 block content
-	div(style='margin-left: 3vw; margin-top: 3vh; max-width: 20vw')
-		h1 Adapter App API
-		h2 Available Routes
-		hr
-		p /
-		p /buildings
-		p /buildings/:building
-		p /buildings/:building/:room
-		p /devices
-		p /devices/:device
-
+	div(id='app')
+	div(class='info')
+		div(class='routes')
+			h1 Adapter App API
+			h2 Available Routes
+			hr
+			p /
+			p /buildings
+			p /buildings/:building
+			p /buildings/:building/:room
+			p /devices
+			p /devices/:device
+		div(class='resp')
+			textarea(class='return-block' name="return", cols="60", rows="10")
