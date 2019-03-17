@@ -15,6 +15,7 @@
 const returnBase = `['norton', 'cooke', 'library', 'carver', 'rankin']`
 const returnBuildings = `[
   {
+    ...
     building: 'carver',
     roomNumber: 108,
     hasHDMI: false,
@@ -32,6 +33,7 @@ const returnBuildings = `[
     hasHDMI: false,
     hasVGA: true,
   },
+  ...
 ]`
 
 const returnRoom = `[
@@ -45,6 +47,7 @@ const returnRoom = `[
 
 const returnDevices = `[
   {
+    ...
     id: 'macbook-air-2011-2014',
     name: 'Macbook Air 2011-2014',
     hasHDMI: false,
@@ -64,6 +67,7 @@ const returnDevices = `[
     linkHDMI: '...link...',
     linkVGA: '...link...',
   },
+  ...
 ]`
 
 const returnDevice = `[

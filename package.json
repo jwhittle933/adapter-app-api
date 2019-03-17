@@ -12,6 +12,7 @@
     "test": "mocha --timeout 10000",
     "main": "./bin.www",
     "lint": "node node_modules/eslint/bin/eslint.js *.js routes/**/*.js",
+    "lintv": "node node_modules/eslint/bin/eslint.js frontend/src/main.js frontend/src/App.vue",
     "lint-fix": "eslint --fix .",
     "pretty": "prettier --write ./app.js ./routes/**/*.js",
     "migrate": "node ./DataLayer/migration.js",
@@ -44,7 +45,8 @@
   "lint-staged": {
     "*.js": [
       "node node_modules/eslint/bin/eslint.js *.js routes/**/*.js",
-      "prettier --write ./bin/www app.js ./routes/**/*.js",
+      "node node_modules/eslint/bin/eslint.js frontend/src/main.js frontend/src/App.vue",
+      "prettier --write ./bin/www app.js ./routes/**/*.js frontend/src/main.js",
       "git add"
     ]
   },
