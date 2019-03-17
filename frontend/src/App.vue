@@ -14,8 +14,8 @@
 <script>
 const returnBase = `['norton', 'cooke', 'library', 'carver', 'rankin']`
 const returnBuildings = `[
+  ...
   {
-    ...
     building: 'carver',
     roomNumber: 108,
     hasHDMI: false,
@@ -46,8 +46,8 @@ const returnRoom = `[
 ]`
 
 const returnDevices = `[
+  ...
   {
-    ...
     id: 'macbook-air-2011-2014',
     name: 'Macbook Air 2011-2014',
     hasHDMI: false,
@@ -109,6 +109,12 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+h2 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 a {
   color: #00b7ff;
   text-decoration: none;
