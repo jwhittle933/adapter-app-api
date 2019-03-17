@@ -5,7 +5,7 @@
       <h2>Available Routes</h2>
       <p v-for="route in routes" :key="route.route" @click="setActive(route)">{{ route.route }}</p>
     </div>
-    <div class="resp" v-if="infoMenu">
+    <div class="resp">
       <textarea name="return" rows="20" cols="80" v-model="returnVal"></textarea>
     </div>
   </div>
@@ -91,14 +91,12 @@ export default {
         { route: '/devices', return: returnDevices },
         { route: '/devices/:device', return: returnDevice },
       ],
-      infoMenu: false,
       activeRoute: '',
       returnVal: '',
     }
   },
   methods: {
     setActive(route) {
-      this.infoMenu = true
       this.activeRoute = route.route
       this.returnVal = route.return
     },
