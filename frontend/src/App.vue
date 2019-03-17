@@ -108,17 +108,11 @@ export default {
 }
 </script>
 
-<style>
-body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
-}
-
+<style scoped>
 a {
   color: #00b7ff;
   text-decoration: none;
 }
-
 textarea {
   height: 60vh;
   border-radius: 10px;
@@ -129,7 +123,6 @@ textarea {
   font-family: monospace;
   font-size: 1em;
 }
-
 p {
   font-family: monospace;
   border: 1px solid grey;
@@ -140,6 +133,10 @@ p {
 }
 p:hover {
   box-shadow: 2px 5px 3px 0px #ccc;
+  cursor: pointer;
+}
+p:active {
+  box-shadow: 1px 2px 0px 0px #ccc;
   cursor: pointer;
 }
 .info {
