@@ -41,13 +41,28 @@
     }
   },
   "lint-staged": {
-    "*.js": [
-      "node node_modules/eslint/bin/eslint.js *.js routes/**/*.js frontend/src/main.js",
-      "prettier --write ./bin/www app.js ./routes/**/*.js frontend/src/main.js",
+    "./bin/www": [
+      "node node_modules/eslint/bin/eslint.js",
+      "prettier --write",
       "git add"
     ],
-    "*.vue": [
-      "node node_modules/eslint/bin/eslint.js frontend/src/App.vue",
+    "*.js": [
+      "node node_modules/eslint/bin/eslint.js",
+      "prettier --write",
+      "git add"
+    ],
+    "routes/**/*.js": [
+      "node node_modules/eslint/bin/eslint.js",
+      "prettier --write",
+      "git add"
+    ],
+    "frontend/src/main.js": [
+      "node node_modules/eslint/bin/eslint.js",
+      "prettier --write",
+      "git add"
+    ],
+    "frontend/*.vue": [
+      "node node_modules/eslint/bin/eslint.js",
       "git add"
     ]
   },

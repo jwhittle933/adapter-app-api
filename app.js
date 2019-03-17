@@ -29,7 +29,6 @@ app.use(express.static(path.join(__dirname, 'frontend/dist')))
 app.get('/', (req, res) => {
   res.redirect('/api')
 })
-
 app.get('/healthcheck', (req, res) => {
   res.render('healthcheck', {
     text: `Hello from the A-P-I`,

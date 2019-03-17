@@ -8,7 +8,6 @@ router.use((req, res, next) => {
   console.log(displayLogTime(req))
   next()
 })
-
 router.get('/', (req, res) => {
   res.status(200).sendFile('index.html', {
     root: './frontend/dist/',
