@@ -41,15 +41,14 @@
     }
   },
   "lint-staged": {
-    "backend": [
-      "node node_modules/eslint/bin/eslint.js *.js routes/**/*.js",
-      "prettier --write ./bin/www app.js ./routes/**/*.js",
-      "git add --all"
+    "*.js": [
+      "node node_modules/eslint/bin/eslint.js *.js routes/**/*.js frontend/src/main.js",
+      "prettier --write ./bin/www app.js ./routes/**/*.js frontend/src/main.js",
+      "git add"
     ],
-    "fronend": [
-      "node node_modules/eslint/bin/eslint.js frontend/src/main.js frontend/src/App.vue",
-      "prettier --write frontend/src/main.js",
-      "git add --all"
+    "*.vue": [
+      "node node_modules/eslint/bin/eslint.js frontend/src/App.vue",
+      "git add"
     ]
   },
   "devDependencies": {
