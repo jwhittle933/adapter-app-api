@@ -5,7 +5,7 @@
       <h2>Available Routes</h2>
       <p v-for="route in routes" :key="route.route" @click="setActive(route)">{{ route.route }}</p>
     </div>
-    <div class="resp" v-if="infoMenu">
+    <div class="resp">
       <textarea name="return" rows="20" cols="80" v-model="returnVal"></textarea>
     </div>
   </div>
@@ -14,6 +14,7 @@
 <script>
 const returnBase = `['norton', 'cooke', 'library', 'carver', 'rankin']`
 const returnBuildings = `[
+  ...
   {
     building: 'carver',
     roomNumber: 108,
@@ -32,6 +33,7 @@ const returnBuildings = `[
     hasHDMI: false,
     hasVGA: true,
   },
+  ...
 ]`
 
 const returnRoom = `[
@@ -44,6 +46,7 @@ const returnRoom = `[
 ]`
 
 const returnDevices = `[
+  ...
   {
     id: 'macbook-air-2011-2014',
     name: 'Macbook Air 2011-2014',
@@ -64,6 +67,7 @@ const returnDevices = `[
     linkHDMI: '...link...',
     linkVGA: '...link...',
   },
+  ...
 ]`
 
 const returnDevice = `[
@@ -91,14 +95,12 @@ export default {
         { route: '/devices', return: returnDevices },
         { route: '/devices/:device', return: returnDevice },
       ],
-      infoMenu: false,
       activeRoute: '',
       returnVal: '',
     }
   },
   methods: {
     setActive(route) {
-      this.infoMenu = true
       this.activeRoute = route.route
       this.returnVal = route.return
     },
@@ -106,17 +108,17 @@ export default {
 }
 </script>
 
-<style>
-body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+<style scoped>
+h1 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-
+h2 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 a {
   color: #00b7ff;
   text-decoration: none;
 }
-
 textarea {
   height: 60vh;
   border-radius: 10px;
@@ -127,7 +129,6 @@ textarea {
   font-family: monospace;
   font-size: 1em;
 }
-
 p {
   font-family: monospace;
   border: 1px solid grey;
@@ -138,6 +139,10 @@ p {
 }
 p:hover {
   box-shadow: 2px 5px 3px 0px #ccc;
+  cursor: pointer;
+}
+p:active {
+  box-shadow: 1px 2px 0px 0px #ccc;
   cursor: pointer;
 }
 .info {

@@ -11,8 +11,7 @@
     "buildf": "cd frontend && yarn build",
     "test": "mocha --timeout 10000",
     "main": "./bin.www",
-    "lint": "node node_modules/eslint/bin/eslint.js *.js routes/**/*.js",
-    "lint-fix": "eslint --fix .",
+    "lint": "node node_modules/eslint/bin/eslint.js *.js routes/**/*.js frontend/src/main.js frontend/src/App.vue",
     "pretty": "prettier --write ./app.js ./routes/**/*.js",
     "migrate": "node ./DataLayer/migration.js",
     "seed": "node ./DataLayer/seed.js",
@@ -33,8 +32,7 @@
     "morgan": "~1.9.0",
     "mysql": "^2.16.0",
     "nodemon": "^1.18.10",
-    "prettier": "^1.16.4",
-    "pug": "2.0.3"
+    "prettier": "^1.16.4"
   },
   "husky": {
     "hooks": {
@@ -42,9 +40,28 @@
     }
   },
   "lint-staged": {
+    "./bin/www": [
+      "node node_modules/eslint/bin/eslint.js",
+      "prettier --write",
+      "git add"
+    ],
     "*.js": [
-      "node node_modules/eslint/bin/eslint.js *.js routes/**/*.js",
-      "prettier --write ./bin/www app.js ./routes/**/*.js",
+      "node node_modules/eslint/bin/eslint.js",
+      "prettier --write",
+      "git add"
+    ],
+    "routes/**/*.js": [
+      "node node_modules/eslint/bin/eslint.js",
+      "prettier --write",
+      "git add"
+    ],
+    "frontend/src/main.js": [
+      "node node_modules/eslint/bin/eslint.js",
+      "prettier --write",
+      "git add"
+    ],
+    "frontend/*.vue": [
+      "node node_modules/eslint/bin/eslint.js",
       "git add"
     ]
   },

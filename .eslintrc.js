@@ -3,6 +3,7 @@ module.exports = {
     ecmaVersion: 2017,
     sourceType: 'module',
   },
+  extends: ['plugin:vue/essential'],
   env: {
     browser: true,
     node: true,
@@ -10,8 +11,8 @@ module.exports = {
   },
   rules: {
     'arrow-spacing': 2,
-    'semi': [2, 'never'],
-    'camelcase': 2,
+    semi: [2, 'never'],
+    camelcase: 2,
     'no-unused-vars': 1,
     'no-undef': 1,
     'no-console': 1,

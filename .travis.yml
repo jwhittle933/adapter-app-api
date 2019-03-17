@@ -1,3 +1,18 @@
 language: node_js
 node_js:
   - '11'
+stages:
+  - lint
+  - test
+jobs:
+  include:
+    - stage: lint
+      script:
+        - yarn lint
+    - stage: test
+      script:
+        - yarn test
+cache:
+  directories:
+    - node_modules/
+    - frontend/node_modules/

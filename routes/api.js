@@ -10,7 +10,7 @@ router.use((req, res, next) => {
 })
 
 router.get('/', (req, res) => {
-  res.sendFile('index.html', {
+  res.status(200).sendFile('index.html', {
     root: './frontend/dist/',
   })
 })
