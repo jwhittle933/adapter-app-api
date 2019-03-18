@@ -3,7 +3,8 @@ process.env.NODE_ENV = 'test'
 require('dotenv').config()
 const chai = require('chai'),
   chaiHttp = require('chai-http'),
-  should = chai.should(),
+  should = chai.should,
+  expect = chai.expect,
   apiController = require('../Controllers/apiController'),
   Queries = require('../DataLayer/queries/Queries'),
   RoomList = require('../routes/Data/Classroomlist'),
@@ -19,9 +20,10 @@ describe('Endpoint Test', () => {
       chai
         .request(app)
         .get(`/${badPath}`)
-        .end(async (err, res) => {
+        .end((err, res) => {
           if (err) done(new Error(err))
-          await res.should.have.status(404)
+          expect(err).to.be.null // connection successful
+          res.should.have.status(404) // bad request
           done()
         })
     })
@@ -31,9 +33,28 @@ describe('Endpoint Test', () => {
       chai
         .request(app)
         .get(`/api`)
-        .end(async (err, res) => {
+        .end((err, res) => {
           if (err) done(new Error(err))
-          await res.should.have.status(200)
+          expect(err).to.be.null // connection successful
+          res.should.have.status(200) // good request
+          done()
+        })
+    })
+  })
+  describe('GET /api/buildings', () => {
+    it('Should respond with array of data', done => {
+      chai
+        .request(app)
+        .get(`/api/buildings`)
+        .end((err, res) => {
+          if (err) done(new Error(err))
+          expect(err).to.be.null // connection successful
+          res.should.have.status(200) // good request'
+          console.log(res.res.tes)
+          expect(res.res.text).to.not.be.null
+          expect(res.res.text).to.equal(
+            `["norton","cooke","library","carver","rankin"]`,
+          )
           done()
         })
     })
