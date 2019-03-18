@@ -5,7 +5,9 @@ const Controllers = require('../Controllers/apiController')
 const logger = require('morgan')
 
 router.use((req, res, next) => {
-  logger(':method :url :status :response-time ms')
+  logger(
+    ':remote-addr - :remote-user :method :url :status :response-time ms :date[web]',
+  )
   next()
 })
 
