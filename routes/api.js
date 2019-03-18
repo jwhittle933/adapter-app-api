@@ -1,11 +1,11 @@
 /* eslint-disable no-console */
 const express = require('express')
 const router = express.Router()
-const displayLogTime = require('./Utils/timeHelpers.js')
 const Controllers = require('../Controllers/apiController')
+const logger = require('morgan')
 
 router.use((req, res, next) => {
-  console.log(displayLogTime(req))
+  logger(':method :url :status :response-time ms')
   next()
 })
 

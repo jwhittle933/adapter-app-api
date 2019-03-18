@@ -14,7 +14,7 @@ const chai = require('chai'),
 
 chai.use(chaiHttp)
 
-describe('Endpoint Test', () => {
+describe('Routes Test', () => {
   describe('Bad Request', () => {
     it('Should return code and message', done => {
       let badPath = 'sdlkf'
@@ -25,7 +25,9 @@ describe('Endpoint Test', () => {
           if (err) done(new Error(err))
           expect(err).to.be.null // connection successful
           expect(res.status).to.equal(404) // bad request
-          expect(res.res.text).to.deep.include('Route /sdlkf not available.')
+          expect(res.res.text).to.deep.include(
+            `Route /${badPath} not available.`,
+          )
           done()
         })
     })
@@ -53,9 +55,7 @@ describe('Endpoint Test', () => {
           expect(err).to.be.null // connection successful
           res.should.have.status(200) // good request'
           expect(res.res.text).to.not.be.null
-          expect(res.res.text).to.equal(
-            `["norton","cooke","library","carver","rankin"]`,
-          )
+          expect(res.res.text).to.include('norton')
           expect(res.header['access-control-allow-origin']).to.equal(
             'http://localhost:3000',
           )
