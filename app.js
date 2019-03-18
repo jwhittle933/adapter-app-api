@@ -1,4 +1,5 @@
 const express = require('express')
+const fs = require('fs')
 const path = require('path')
 const logger = require('morgan')
 const helmet = require('helmet')
@@ -33,7 +34,20 @@ app.get('/healthcheck', (req, res) => {
   })
 })
 
-app.use(logger('dev'))
+app.use(
+  logger('dev', {
+    skip: function(req, res) {
+      return res.statusCode < 400
+    },
+  }),
+)
+app.use(
+  logger('common', {
+    stream: fs.createWriteStream(path.join(__dirname, 'access.log'), {
+      flags: 'a',
+    }),
+  }),
+)
 app.use(express.json())
 app.use(express.static(path.join(__dirname, 'frontend/dist')))
 
