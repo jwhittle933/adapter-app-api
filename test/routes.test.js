@@ -1,4 +1,5 @@
 /* eslint-disable */
+/* prettier-diable */
 process.env.NODE_ENV = 'test'
 require('dotenv').config()
 const chai = require('chai'),
@@ -23,7 +24,8 @@ describe('Endpoint Test', () => {
         .end((err, res) => {
           if (err) done(new Error(err))
           expect(err).to.be.null // connection successful
-          res.should.have.status(404) // bad request
+          expect(res.status).to.equal(404) // bad request
+          expect(res.res.text).to.deep.include('Route /sdlkf not available.')
           done()
         })
     })
@@ -42,7 +44,7 @@ describe('Endpoint Test', () => {
     })
   })
   describe('GET /api/buildings', () => {
-    it('Should respond with array of data', done => {
+    it('Should respond with Array of building names', done => {
       chai
         .request(app)
         .get(`/api/buildings`)
@@ -50,11 +52,27 @@ describe('Endpoint Test', () => {
           if (err) done(new Error(err))
           expect(err).to.be.null // connection successful
           res.should.have.status(200) // good request'
-          console.log(res.res.tes)
           expect(res.res.text).to.not.be.null
           expect(res.res.text).to.equal(
             `["norton","cooke","library","carver","rankin"]`,
           )
+          expect(res.header['access-control-allow-origin']).to.equal(
+            'http://localhost:3000',
+          )
+          done()
+        })
+    })
+  })
+  describe('GET /api/buildings/norton', () => {
+    it('Should respond with Array of room data', done => {
+      chai
+        .request(app)
+        .get(`/api/buildings/norton`)
+        .end((err, res) => {
+          if (err) done(new Error(err))
+          expect(err).to.be.null // connection successful
+          res.should.have.status(200) // good request'
+          expect(res.res.text).to.not.be.null
           done()
         })
     })
