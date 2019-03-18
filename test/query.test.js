@@ -9,15 +9,10 @@ const Queries = require('../DataLayer/queries/Queries')
 const RoomList = require('../routes/Data/Classroomlist')
 const Devices = require('../routes/Data/Devicelist')
 
-describe('API Controller test', () => {
-  describe('Buildings Controller', () => {
-    it('Should return Array of Buildings', done => {
-      //   const buildings = apiController.buildingsController()
-      if (true) {
-        done()
-      } else {
-        done(new Error('How did that happen??'))
-      }
+describe('Database Query Tests', () => {
+  describe('Query For a List', () => {
+    it('Returns list of specified data', done => {
+      done()
     })
   })
 })
