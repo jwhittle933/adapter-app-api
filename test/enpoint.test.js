@@ -1,14 +1,14 @@
 /* eslint-disable */
 process.env.NODE_ENV = 'test'
 require('dotenv').config()
-const chai = require('chai')
-const chaiHttp = require('chai-http')
-const should = chai.should()
-const apiController = require('../Controllers/apiController')
-const Queries = require('../DataLayer/queries/Queries')
-const RoomList = require('../routes/Data/Classroomlist')
-const Devices = require('../routes/Data/Devicelist')
-const api = require('../routes/api.js')
+const chai = require('chai'),
+  chaiHttp = require('chai-http'),
+  should = chai.should(),
+  apiController = require('../Controllers/apiController'),
+  Queries = require('../DataLayer/queries/Queries'),
+  RoomList = require('../routes/Data/Classroomlist'),
+  Devices = require('../routes/Data/Devicelist'),
+  app = require('../app.js')
 
 chai.use(chaiHttp)
 
@@ -17,10 +17,11 @@ describe('Endpoint Test', () => {
     it('Should return code and message', done => {
       let badPath = 'sdlkf'
       chai
-        .request(api)
-        .get(`/api/${badPath}`)
-        .end((err, res) => {
-          res.should.have.status(404)
+        .request(app)
+        .get(`/${badPath}`)
+        .end(async (err, res) => {
+          if (err) done(new Error(err))
+          await res.should.have.status(404)
           done()
         })
     })
@@ -28,10 +29,11 @@ describe('Endpoint Test', () => {
   describe('GET /api', () => {
     it('Should return code and message', done => {
       chai
-        .request(api)
+        .request(app)
         .get(`/api`)
-        .end((err, res) => {
-          res.should.have.status(200)
+        .end(async (err, res) => {
+          if (err) done(new Error(err))
+          await res.should.have.status(200)
           done()
         })
     })
