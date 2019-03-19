@@ -4,6 +4,7 @@
  * Module dependencies.
  */
 require('dotenv').config()
+if (!process.env.LOCAL) process.env.NODE_ENV = 'production'
 const app = require('../app')
 const debug = require('debug')('adapterapi:server')
 const server = require('http').createServer(app)

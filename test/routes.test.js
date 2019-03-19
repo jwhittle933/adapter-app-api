@@ -46,7 +46,7 @@ describe('Routes Test', () => {
     })
   })
   describe('GET /api/buildings', () => {
-    it('Should respond with Array of building names', done => {
+    it('/api/buildings should respond with Array of building names', done => {
       chai
         .request(app)
         .get(`/api/buildings`)
@@ -63,16 +63,53 @@ describe('Routes Test', () => {
         })
     })
   })
-  describe('GET /api/buildings/norton', () => {
-    it('Should respond with Array of room data', done => {
+  const buildings = ['norton', 'carver', 'library', 'cooke', 'rankin']
+  buildings.forEach(building => {
+    describe('GET /api/buildings/norton', () => {
+      it('/api/buildings/norton should respond with Array of room data', done => {
+        chai
+          .request(app)
+          .get(`/api/buildings/${building}`)
+          .end((err, res) => {
+            if (err) done(new Error(err))
+            expect(err).to.be.null // connection successful
+            res.should.have.status(200) // good request'
+            if (building === 'norton') {
+              expect(res.res.text).to.include('11')
+              expect(res.res.text).to.include('101')
+              done()
+            } else if (building === 'carver') {
+              expect(res.res.text).to.include('108')
+              expect(res.res.text).to.include('135')
+              done()
+            } else if (building === 'library') {
+              expect(res.res.text).to.include('Crismon')
+              expect(res.res.text).to.include('Mullins')
+              done()
+            } else if (building === 'cooke') {
+              expect(res.res.text).to.include('8')
+              expect(res.res.text).to.include('CCRH')
+              done()
+            } else if (building === 'rankin') {
+              expect(res.res.text).to.include('101')
+              expect(res.res.text).to.include('201')
+              done()
+            }
+          })
+      })
+    })
+  })
+  describe('GET /api/devices', () => {
+    it('/api/devices should respond with Array of device objects', done => {
       chai
         .request(app)
-        .get(`/api/buildings/norton`)
+        .get(`/api/devices`)
         .end((err, res) => {
           if (err) done(new Error(err))
           expect(err).to.be.null // connection successful
           res.should.have.status(200) // good request'
-          expect(res.res.text).to.not.be.null
+          expect(res.res.text).to.include('Apple iPad')
+          expect(res.res.text).to.include('Seminary Issue Dell Laptop')
           done()
         })
     })
