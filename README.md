@@ -9,8 +9,7 @@
   <a href="https://adapter-api.herokuapp.com/api/">Interface</a> •
   <a href="#scripts">Scripts</a> •
   <a href="#configurationi">Configuration</a> •
-  <a href="#base-endpoints">Base Enpoints</a> •
-  <a href="#scoped-endpoints">Scoped Enpoints</a> •
+  <a href="#endpoints">Base Enpoints</a> •
   <a href="https://github.com/jwhittle933/adapter-app-api/archive/master.zip">Download</a> •
   <a href="https://github.com/jwosborn/Adapter-app">AdapterApp</a> •
 </p>
@@ -90,7 +89,7 @@ $ yarn seed
 $ yarn testdb
 ```
 
-## Base Endpoints
+## Endpoints
 
 ### Base
 
