@@ -77,6 +77,7 @@ describe('Routes Test', () => {
             if (building === 'norton') {
               expect(res.res.text).to.include('11')
               expect(res.res.text).to.include('101')
+              expect(res.res.text).to.include('hasHDMI')
               done()
             } else if (building === 'carver') {
               expect(res.res.text).to.include('108')
