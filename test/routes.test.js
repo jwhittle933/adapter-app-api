@@ -1,5 +1,4 @@
 /* eslint-disable */
-/* prettier-diable */
 process.env.NODE_ENV = 'test'
 require('dotenv').config()
 const chai = require('chai'),
@@ -14,7 +13,7 @@ const chai = require('chai'),
 
 chai.use(chaiHttp)
 
-describe('Routes Test', () => {
+describe('>>>>>>>>>> Routes Tests <<<<<<<<<<<<', () => {
   describe('Bad Request', () => {
     it('Should return code and message', done => {
       let badPath = 'sdlkf'
@@ -28,6 +27,34 @@ describe('Routes Test', () => {
           expect(res.res.text).to.deep.include(
             `Route /${badPath} not available.`,
           )
+          done()
+        })
+    })
+  })
+  describe('GET /', () => {
+    it('Should return a redirect', done => {
+      chai
+        .request(app)
+        .get(`/`)
+        .end((err, res) => {
+          if (err) done(new Error(err))
+          expect(err).to.be.null // connection successful
+          expect(res.redirects).to.not.be.null
+          res.should.have.status(200) // good request
+          done()
+        })
+    })
+  })
+  describe('GET /healthcheck', () => {
+    it('Should return Adele', done => {
+      chai
+        .request(app)
+        .get(`/healthcheck`)
+        .end((err, res) => {
+          if (err) done(new Error(err))
+          expect(err).to.be.null // connection successful
+          res.should.have.status(200) // good request
+          expect(res.res.text).to.include('Hello from the A-P-I')
           done()
         })
     })

@@ -28,15 +28,17 @@ app.get('/', (req, res) => {
 })
 
 app.get('/healthcheck', (req, res) => {
-  res.render('healthcheck', {
-    text: `Hello from the A-P-I`,
-    attr: `(– Adele, "Hello")`,
-  })
+  res.send(`
+    <div style="text-align: center; margin: 10vh;">
+      <h1 style="font-family: monospace;">Hello from the A-P-I</h1>
+      <h2 style="font-family: monospace;">(– Adele, "Hello")</h2>
+    </div>
+  `)
 })
 
 app.use(
   logger('dev', {
-    skip: function(req, res) {
+    skip: (req, res) => {
       return res.statusCode < 400
     },
   }),
