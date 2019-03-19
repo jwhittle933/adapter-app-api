@@ -17,15 +17,15 @@
 
 [![Build Status](https://travis-ci.com/jwhittle933/adapter-app-api.svg?branch=master)](https://travis-ci.com/jwhittle933/adapter-app-api)
 [![Greenkeeper badge](https://badges.greenkeeper.io/jwhittle933/adapter-app-api.svg)](https://greenkeeper.io/)
-[![GitHub version](https://badge.fury.io/gh/boennemann%2Fbadges.svg)](http://badge.fury.io/gh/boennemann%2Fbadges)
+[![GitHub version](https://badge.fury.io/gh/jwhittle933%2Fadapter-app-api.svg)](http://badge.fury.io/gh/boennemann%2Fbadges)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 [![Dependency Status](https://david-dm.org/jwhittle933/adapter-app-api.svg)](https://david-dm.org/jwhittle933/adapter-app-api)
 [![Bash Shell](https://badges.frapsoft.com/bash/v1/bash.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![Pending Pull-Requests](http://githubbadges.herokuapp.com/boennemann/badges/pulls.svg?style=flat)](https://github.com/jwhittle933/adapter-app-api/pulls)
-[![Open Issues](http://githubbadges.herokuapp.com/boennemann/badges/issues.svg?style=flat)](https://github.com/jwhittle933/adapter-app-api/issues)
-[![star this repo](http://githubbadges.com/star.svg?user=boennemann&repo=badges&style=flat)](https://github.com/jwhittle933/adapter-app-api)
+[![Pending Pull-Requests](http://githubbadges.herokuapp.com/jwhittle933/adapter-app-api/pulls.svg?style=flat)](https://github.com/jwhittle933/adapter-app-api/pulls)
+[![Open Issues](http://githubbadges.herokuapp.com/jwhittle933/adapter-app-api/issues.svg?style=flat)](https://github.com/jwhittle933/adapter-app-api/issues)
+[![star this repo](http://githubbadges.com/star.svg?user=jwhittle933&repo=adapter-app-api&style=flat)](https://github.com/jwhittle933/adapter-app-api)
 
 <hr>
 
