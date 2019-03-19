@@ -7,7 +7,6 @@ const Controllers = {
     const { queryForListOf } = queries
     conn.query(queryForListOf('building', 'classrooms'), (err, results) => {
       if (err) return err
-      console.log(results.map(x => x.building))
       res.status(200).json(results.map(x => x.building))
     })
   },
@@ -15,11 +14,6 @@ const Controllers = {
     const { queryForBuilding } = queries
     conn.query(queryForBuilding(req.params.building), (err, results) => {
       if (err) return console.error(err)
-      console.log(
-        `${req.method} request to ${req.path} accessed by ${
-          req.hostname
-        } for rooms in ${req.params.building}`,
-      )
       res.status(200).json(results)
     })
   },
@@ -29,7 +23,6 @@ const Controllers = {
       queryForRoom(req.params.building, req.params.room),
       (err, results) => {
         if (err) return console.error(err)
-        console.log(results)
         res.status(200).json(results)
       },
     )
@@ -38,7 +31,6 @@ const Controllers = {
     const { queryForDevice } = queries
     conn.query(queryForDevice(req.params.device), (err, results) => {
       if (err) return console.error(err)
-      console.log(results)
       res.status(200).json(results)
     })
   },
@@ -46,7 +38,6 @@ const Controllers = {
     const { queryForListOf } = queries
     conn.query(queryForListOf('*', 'devices'), (err, results) => {
       if (err) return console.error(err)
-      console.log(results)
       res.status(200).json(results)
     })
   },

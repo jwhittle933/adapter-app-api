@@ -9,7 +9,7 @@ const Queries = require('../DataLayer/queries/Queries')
 const RoomList = require('../routes/Data/Classroomlist')
 const Devices = require('../routes/Data/Devicelist')
 
-describe('Database Query Tests', () => {
+describe('>>>>>>>>>>>> Database Query Tests <<<<<<<<<<<<<<<<', () => {
   describe('Query For a List', () => {
     it('Returns list of specified data', done => {
       done()
