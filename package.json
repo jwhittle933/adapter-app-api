@@ -9,7 +9,7 @@
     "start": "node ./bin/www",
     "watch": "nodemon ./bin/www",
     "buildf": "cd frontend && yarn build",
-    "test": "mocha --timeout 10000",
+    "test": "mocha -b -c --exit",
     "main": "./bin.www",
     "lint": "node node_modules/eslint/bin/eslint.js *.js routes/**/*.js frontend/src/main.js frontend/src/App.vue",
     "pretty": "prettier --write ./app.js ./routes/**/*.js",
