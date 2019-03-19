@@ -24,10 +24,6 @@
 [![Open Issues](http://githubbadges.herokuapp.com/jwhittle933/adapter-app-api/issues.svg?style=flat)](https://github.com/jwhittle933/adapter-app-api/issues)
 [![star this repo](http://githubbadges.com/star.svg?user=jwhittle933&repo=adapter-app-api&style=flat)](https://github.com/jwhittle933/adapter-app-api)
 
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
-[![Bash Shell](https://badges.frapsoft.com/bash/v1/bash.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
-[![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
-
 <hr>
 
 ## Scripts
