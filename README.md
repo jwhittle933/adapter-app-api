@@ -17,7 +17,7 @@
 
 [![Build Status](https://travis-ci.com/jwhittle933/adapter-app-api.svg?branch=master)](https://travis-ci.com/jwhittle933/adapter-app-api)
 [![Greenkeeper badge](https://badges.greenkeeper.io/jwhittle933/adapter-app-api.svg)](https://greenkeeper.io/)
-[![GitHub version](https://badge.fury.io/gh/jwhittle933%2Fadapter-app-api.svg)](http://badge.fury.io/gh/jwhittle933%2Fadapter-app-api)
+[![GitHub version](https://badge.fury.io/gh/jwhittle933%2Fadapter-app-api.svg)](https://badge.fury.io/gh/jwhittle933%2Fadapter-app-api)
 [![Dependency Status](https://david-dm.org/jwhittle933/adapter-app-api.svg)](https://david-dm.org/jwhittle933/adapter-app-api)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![Pending Pull-Requests](http://githubbadges.herokuapp.com/jwhittle933/adapter-app-api/pulls.svg?style=flat)](https://github.com/jwhittle933/adapter-app-api/pulls)
