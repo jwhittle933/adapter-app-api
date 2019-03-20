@@ -27,7 +27,7 @@ describe('>>>>>>>>>> Routes Tests <<<<<<<<<<<<', () => {
           expect(res.res.text).to.deep.include(
             `Route /${badPath} not available.`,
           )
-          expect(res.res.text).to.be.json
+          expect(res.res.text).to.be.string
           done()
         })
     })
