@@ -8,7 +8,7 @@ const apiRouter = require('./routes/api')
 const app = express()
 
 const corsOpts = {
-  origin: 'https://sbts-adapter-app.herokuapp.com/',
+  origin: 'https://sbts-adapter-app.herokuapp.com',
   optionsSuccessStatus: 200,
 }
 
