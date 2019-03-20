@@ -8,7 +8,7 @@ const apiRouter = require('./routes/api')
 const app = express()
 
 const corsOpts = {
-  origin: 'http://localhost:3000',
+  origin: 'https://sbts-adapter-app.heroku.com',
   optionsSuccessStatus: 200,
 }
 
