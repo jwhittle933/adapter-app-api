@@ -161,7 +161,7 @@ This path returns an Array with a single object containing the data for a single
 ### Devices
 
 `/devices`
-This path reuturns an Array of Objects with the devices and there relevant properties
+This path reuturns an Array of Objects with the devices and their relevant properties
 
 ```json
 [
