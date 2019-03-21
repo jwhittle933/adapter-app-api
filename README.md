@@ -11,7 +11,7 @@
   <a href="#configurationi">Configuration</a> •
   <a href="#endpoints">Base Enpoints</a> •
   <a href="https://github.com/jwhittle933/adapter-app-api/archive/master.zip">Download</a> •
-  <a href="https://github.com/jwosborn/Adapter-app">AdapterApp</a> •
+  <a href="https://sbts-adapter-app.herokuapp.com/">AdapterApp</a> •
 </p>
 
 [![Build Status](https://travis-ci.com/jwhittle933/adapter-app-api.svg?branch=master)](https://travis-ci.com/jwhittle933/adapter-app-api)
