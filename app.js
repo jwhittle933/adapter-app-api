@@ -7,13 +7,15 @@ const cors = require('cors')
 const apiRouter = require('./routes/api')
 const app = express()
 
-const corsOpts = {
-  origin: 'https://sbts-adapter-app.herokuapp.com',
-  optionsSuccessStatus: 200,
-}
+/* corsOpts for restricting access */
+// const corsOpts = {
+//   origin: 'https://sbts-adapter-app.herokuapp.com',
+//   optionsSuccessStatus: 200,
+// }
 
 // Cors and Security Middleware
-app.use(cors(corsOpts))
+// app.use(cors(corsOpts))
+app.use(cors())
 app.use(helmet())
 
 app.get('/', (req, res) => {

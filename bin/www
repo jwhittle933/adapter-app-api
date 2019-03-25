@@ -3,6 +3,7 @@
 /**
  * Module dependencies.
  */
+require('newrelic')
 require('dotenv').config()
 if (!process.env.LOCAL) process.env.NODE_ENV = 'production'
 const app = require('../app')
