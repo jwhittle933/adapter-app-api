@@ -84,9 +84,7 @@ describe('>>>>>>>>>> Routes Tests <<<<<<<<<<<<', () => {
           res.should.have.status(200) // good request'
           expect(res.res.text).to.not.be.null
           expect(res.res.text).to.include('norton')
-          expect(res.header['access-control-allow-origin']).to.equal(
-            'http://localhost:3000',
-          )
+          expect(res.header['access-control-allow-origin']).to.equal('*')
           done()
         })
     })
