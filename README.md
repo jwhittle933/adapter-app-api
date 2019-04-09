@@ -19,8 +19,6 @@
 [![GitHub version](https://badge.fury.io/gh/jwhittle933%2Fadapter-app-api.svg)](https://badge.fury.io/gh/jwhittle933%2Fadapter-app-api)
 [![Dependency Status](https://david-dm.org/jwhittle933/adapter-app-api.svg)](https://david-dm.org/jwhittle933/adapter-app-api)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![Pending Pull-Requests](http://githubbadges.herokuapp.com/jwhittle933/adapter-app-api/pulls.svg?style=flat)](https://github.com/jwhittle933/adapter-app-api/pulls)
-[![Open Issues](http://githubbadges.herokuapp.com/jwhittle933/adapter-app-api/issues.svg?style=flat)](https://github.com/jwhittle933/adapter-app-api/issues)
 [![star this repo](http://githubbadges.com/star.svg?user=jwhittle933&repo=adapter-app-api&style=flat)](https://github.com/jwhittle933/adapter-app-api)
 
 <hr>
